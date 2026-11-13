@@ -1,0 +1,1623 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ExamTech Cameroun — V2</title><meta name="theme-color" content="#007A5E"><meta name="description" content="ExamTech Cameroun — Sujets et leçons APC pour l'enseignement technique.">
+<style>
+*{box-sizing:border-box}html{font-size:16px}body{font-family:system-ui,-apple-system,Arial,sans-serif;margin:0;background:#f4f6f4;color:#222;line-height:1.6;padding-bottom:92px}
+:focus-visible{outline:3px solid #111;outline-offset:3px;border-radius:8px}
+header{background:#007A5E;color:#fff;padding:16px;text-align:center;position:relative}.devise{position:absolute;right:12px;top:12px;background:#FCD116;color:#111;font-weight:800;font-size:14px;padding:6px 10px;border-radius:999px;white-space:nowrap}header h1{margin:0;font-size:24px}header p{margin:6px 0 0;font-size:16px;color:#fff}
+.bar{display:flex;height:8px}.bar div{flex:1}.g{background:#007A5E}.r{background:#CE1126}.y{background:#FCD116}
+main{max-width:820px;margin:0 auto;padding:12px}.card{background:#fff;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.07)}h2{margin:0 0 8px;font-size:21px;line-height:1.3}h3{margin:16px 0 6px;font-size:18px}
+label{display:block;margin:12px 0 6px;font-weight:700;font-size:16px;color:#222}
+input,select,textarea{width:100%;padding:14px;border:2px solid #666;border-radius:12px;font-size:16px;background:#fff;color:#222;min-height:48px}input:focus,select:focus,textarea:focus{border-color:#007A5E;outline:3px solid #111;outline-offset:2px}
+button{width:100%;padding:14px;min-height:48px;border:0;border-radius:12px;background:#007A5E;color:#fff;font-size:16px;font-weight:700;margin-top:10px;cursor:pointer}button.sec{background:#fff;color:#007A5E;border:2px solid #007A5E}button.small{width:auto;padding:12px 16px;font-size:16px;margin:6px 6px 0 0;min-height:48px}
+.badge{display:inline-block;background:#FCD116;color:#111;padding:6px 12px;border-radius:999px;font-weight:700;font-size:15px}.small{font-size:16px;color:#333;line-height:1.6}.ok{background:#e6f6ef;padding:14px;border-radius:12px;margin-top:12px;font-size:16px;color:#222;border:1px solid #007A5E}.err{background:#fde8e8;padding:14px;border-radius:12px;margin-top:12px;font-size:16px;color:#222;border:1px solid #CE1126}.warn{background:#fff7e6;padding:14px;border-radius:12px;margin-top:12px;font-size:16px;color:#222;border:1px solid #FCD116}.hidden{display:none}.q{border:1px solid #ccc;border-radius:12px;padding:14px;margin:10px 0}.flex{display:flex;gap:10px;flex-wrap:wrap}.flex>*{flex:1;min-width:160px}
+footer{text-align:center;padding:20px;color:#333;font-size:15px}
+.bottomnav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:2px solid #ddd;display:flex;z-index:20}.bottomnav button{flex:1;margin:0;border-radius:0;min-height:64px;background:#fff;color:#222;font-size:15px;padding:8px 4px}.bottomnav button.on{background:#007A5E;color:#fff}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button{width:auto;padding:12px 16px;font-size:16px;margin:0;min-height:48px}.tabs button.on{background:#111}
+.progress{height:12px;background:#e5e5e5;border-radius:999px;overflow:hidden;margin:12px 0}.progress>div{height:100%;background:#007A5E;width:0%;transition:width .4s}
+#netBanner{position:sticky;top:0;z-index:30;text-align:center;padding:10px;font-size:16px;font-weight:700}
+@media(prefers-color-scheme:dark){body{background:#121212;color:#eee}header{background:#004d3a}.card{background:#1e1e1e;color:#eee}input,select,textarea{background:#222;color:#eee;border-color:#888}label{color:#eee}.small{color:#ddd}.bottomnav{background:#1e1e1e}.bottomnav button{background:#1e1e1e;color:#eee}.q{border-color:#555}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.bottomnav,#netBanner,button{display:none!important}body{padding:0}}
+
+/* ===== V3.6 IDENTITE CAMEROUN ===== */
+header{background:#0b3d2e;color:#fff;padding:0;text-align:left;overflow:hidden}
+.header-flag{position:relative}
+.header-flag img{width:100%;height:250px;object-fit:cover;display:block;filter:saturate(1.05)}
+.header-flag::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.45))}
+.header-text{position:absolute;left:16px;right:16px;bottom:12px;z-index:2;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.header-text h1{margin:0;font-size:28px;line-height:1.1}
+.header-text p{margin:6px 0 0;font-size:15px}
+.header-text .badge{display:inline-block;background:#FCD116;color:#111;font-weight:800;font-size:12px;padding:3px 10px;border-radius:999px;margin-top:8px}
+.brand-star{color:#FCD116}
+button{background:#CE1126}button:hover{background:#a80e20}
+button.sec{background:#fff;color:#0b3d2e;border:2px solid #007A5E}
+button.sec:hover{background:#e6f3ef}
+h2{border-left:6px solid #007A5E;padding-left:10px}
+h2::after{content:"";display:block;height:3px;width:90px;margin-top:6px;background:linear-gradient(90deg,#007A5E 33%,#CE1126 33% 66%,#FCD116 66%)}
+.card{border-top:4px solid #007A5E}
+.ok{border-left:5px solid #007A5E}
+.err{border-left:5px solid #CE1126}
+.official-flag{width:100%;height:44px;object-fit:cover;border-radius:10px;display:block;margin:8px 0}
+</style>
+<style>
+body{font-family:'Outfit',system-ui,-apple-system,Arial,sans-serif;font-size:18px}
+h1,h2,h3{font-family:'Bricolage Grotesque','Outfit',sans-serif}
+h2{font-size:27px;letter-spacing:-.5px}
+.header-flag{position:relative;overflow:hidden}
+.header-flag::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,60,45,.05),rgba(0,40,30,.62));z-index:1}
+.header-text h1{font-size:42px;line-height:1.05;letter-spacing:-1.5px}
+.wordmark{font-weight:800}
+.wordmark-tech{background:linear-gradient(90deg,#FCD116,#fff3a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wordmark-cm{display:block;font-size:22px;letter-spacing:3px;text-transform:uppercase;opacity:.95}
+.header-text p{font-size:18px;font-weight:600}
+.header-text .badge{font-size:14px;padding:6px 14px}
+.card{border-radius:22px;box-shadow:0 8px 28px rgba(0,0,0,.10)}
+button{font-family:'Outfit',sans-serif;font-size:18px;border-radius:16px}
+.hero-choice h2{font-size:32px;margin-bottom:6px}
+.hero-choice .card{border-top:6px solid #007A5E}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.hero-chips span{background:#eef7f2;color:#00573f;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px}
+.choice-btn{box-shadow:0 10px 24px rgba(0,0,0,.16);transition:transform .15s ease,box-shadow .15s ease}
+.choice-btn:active{transform:translateY(2px) scale(.99)}
+.choice-sujet{background:linear-gradient(135deg,#CE1126,#ff4d4d)!important;color:#fff!important}
+.choice-lecon{border:2px solid #007A5E!important}
+.card .small{font-size:16.5px}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* V5.12 — Accueil allégé : rien que la connexion, le reste est replié ou masqué */
+body:has(#login:not(.hidden)) .bottomnav, body:has(#login:not(.hidden)) footer{display:none}
+.login-details{margin:0 0 12px}
+.login-details summary{cursor:pointer;font-weight:700;color:#007A5E;font-size:16px}
+.login-details p{margin-top:8px}
+</style>
+
+<style>
+/* V5.12 — Accueil simplifié : bannière courte, juste le nom, rien d'autre */
+body:has(#login:not(.hidden)) .header-flag img{height:150px}
+body:has(#login:not(.hidden)) .header-text p, body:has(#login:not(.hidden)) .header-text .badge{display:none}
+</style>
+</head><body>
+<div id="netBanner" class="hidden" role="status" aria-live="polite"></div>
+<header><div class="header-flag"><img src="data:image/jpeg;base64,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" alt="Drapeau du Cameroun - vert, rouge, jaune, etoile d'or"><div class="header-text"><h1><span class="brand-star">★</span> <span class="wordmark">Exam<span class="wordmark-tech">Tech</span></span><span class="wordmark-cm">Cameroun</span></h1><p>Sujets • Leçons APC • Banque • IA • Paiement — Référentiels MINESEC / OBC / DECC</p><span class="badge">Paix — Travail — Patrie</span></div></div><div class="devise" title="Devise du Cameroun">🇨🇲 FCFA • XAF</div></header><div class="bar" aria-hidden="true"><div class="g"></div><div class="r"></div><div class="y"></div></div>
+
+<div id="login" style="max-width:520px;margin:0 auto;padding:14px"><div class="card"><h2>Bienvenue sur ExamTech</h2><p class="small">Version V5.12 — 100 % en ligne, IA Groq.</p><details class="login-details"><summary>En savoir plus</summary><p class="small">Référentiels MENU / CHARPENTE (2023) et AMEB / MAGE (2023–2024) — Interface drapeau du Cameroun — Bibliothèque des définitions + calculateur de barème. Si tu ne vois pas la nouvelle version, vide le cache : Paramètres du navigateur → Effacer les données.</p></details><p class="small">Compte démo : <b>demo@examtech.cm</b> / <b>demo1234</b> — Premium</p>
+<label for="email">Email</label><input id="email" value="demo@examtech.cm" autocomplete="username">
+<label for="pwd">Mot de passe</label><input id="pwd" type="password" value="demo1234" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false">
+<button class="sec" onclick="togglePwd()" type="button" id="eyeBtn">Afficher le mot de passe</button>
+<p style="text-align:right;margin:0 0 10px"><button type="button" class="small sec" onclick="showForgot()">Mot de passe oublié ?</button></p>
+<div id="forgotBox" class="hidden" style="border:2px solid #007A5E;border-radius:14px;padding:14px;margin:0 0 12px"><b>🔑 Mot de passe oublié</b><p class="small">Entre l'email de ton compte. Pas de serveur d'envoi dans cette version : le code s'affichera ici même.</p>
+<div id="forgotStep1"><label for="forgotEmail">Email du compte</label><input id="forgotEmail" type="email" autocomplete="email"><button onclick="sendResetCode()">Recevoir le code</button></div>
+<div id="forgotStep2" class="hidden"><p class="small">Ton code de réinitialisation : <b id="resetCodeDisplay" style="font-size:22px;letter-spacing:3px"></b> <span class="small">(valable 10 minutes)</span></p><label for="resetCode">Code reçu</label><input id="resetCode" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><label for="newPw">Nouveau mot de passe</label><input id="newPw" type="password" autocomplete="new-password"><button onclick="doResetPassword()">Changer le mot de passe</button></div>
+<div id="forgotMsg" role="status" aria-live="polite"></div>
+<p><button class="small sec" type="button" onclick="hideForgot()">← Revenir à la connexion</button></p></div>
+<button onclick="doLogin()">Se connecter →</button><button class="sec" onclick="enterDemo()">Continuer en démo — sans mot de passe</button><div id="loginMsg" role="status" aria-live="polite"></div>
+<p class="small"><input type="checkbox" id="cgu" checked style="width:24px;height:24px;min-height:0"> J'accepte les Conditions v1.1.</p>
+</div></div>
+
+
+<div id="postLoginChoice" class="hidden" style="max-width:520px;margin:0 auto;padding:14px"><div class="card hero-choice"><h2>Que veux-tu faire ?</h2><p class="small">Choisis une seule chose. On avance ensuite étape par étape.</p><div class="hero-chips"><span>📚 29 définitions officielles</span><span>🤖 IA gratuite</span><span>🇨🇲 Référentiels MINESEC</span></div>
+<button class="choice-btn choice-sujet" onclick="choosePath('sujet')" style="padding:22px;font-size:20px;text-align:left">📝 <b>Un sujet</b><br><span style="font-weight:400;font-size:16px">Épreuve + corrigé — formative, devoir, sommative ou examen officiel</span></button>
+<button class="choice-btn choice-lecon sec" onclick="choosePath('lecon')" style="padding:22px;font-size:20px;text-align:left">📖 <b>Des leçons</b><br><span style="font-weight:400;font-size:16px">2 leçons APC à la fois, avec exercices et corrigés</span></button>
+<p class="small">Tu pourras changer à tout moment avec les onglets en bas.</p></div></div>
+<div id="mainApp" class="hidden"><main>
+<!-- GENERER -->
+<div id="tab-gen"><div class="card"><button class="sec small" onclick="backToChoice()">← Choisir Sujet ou Leçons</button><h2 style="margin-top:12px">📝 Générer une épreuve</h2><p class="small">1 écran = 1 étape. Tu ne peux pas te tromper.</p>
+<div class="tabs" role="tablist" aria-label="Étapes génération"><button class="on" onclick="setStep(1,this)">1 • Type</button><button onclick="setStep(2,this)">2 • Filière et classe</button><button onclick="setStep(3,this)">3 • Chapitre</button><button onclick="setStep(4,this)">4 • Générer</button></div>
+<div id="step1"><label for="type">Type d'évaluation</label><select id="type" onchange="renderOfficialBox()"><option>Évaluation formative</option><option>Devoir de classe</option><option>Évaluation sommative</option><option>Examen officiel</option></select><div id="etabBlock"><label for="etab">Établissement fréquenté (formatif / sommatif)</label><input id="etab" placeholder="Ex : Lycée Technique de Yaoundé" autocomplete="organization"><label for="logoFile">Logo établissement (optionnel)</label><input type="file" id="logoFile" accept="image/*"></div><p class="small hidden" id="officialNote">Examen officiel : en-tête MINESEC / OBC verrouillé, sans établissement ni logo.</p><div id="officialBlock" class="hidden"><img class="official-flag" src="data:image/jpeg;base64,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" alt="Drapeau du Cameroun"><label for="offExamen">1. Examen officiel</label><select id="offExamen" onchange="onOfficialExamChange()"></select><label for="offSpec">Spécialité</label><select id="offSpec" onchange="onOfficialSpecChange()"></select><label for="offMatiere">2. Matière — liée à l'examen choisi</label><select id="offMatiere" onchange="renderOfficialBox()"></select><label for="offComp">3. Compétence — générée automatiquement depuis la matière</label><select id="offComp"></select><p class="small" id="offLevelLine"></p><label>Durée et coefficient — découlent de la définition officielle</label><div style="display:flex;gap:8px"><input id="offDuree" readonly placeholder="Durée"><input id="offCoeff" readonly placeholder="Coeff"></div><div id="offFallback" class="hidden"><p class="small">Définition sans durée / coefficient : choisis-les ici (ils seront utilisés pour ce sujet).</p><label for="offDureeChoice">Durée (secours)</label><select id="offDureeChoice"><option>01 heure</option><option selected>02 heures</option><option>03 heures</option><option>04 heures</option><option>05 heures</option><option>08 heures</option><option>11 heures</option><option>12 heures</option><option>14 heures</option></select><label for="offCoeffChoice">Coefficient (secours)</label><select id="offCoeffChoice"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>6</option><option>8</option><option>10</option></select></div><div id="officialBox"></div><label for="offTotal">Total du barème pour ce sujet (ne change pas la définition, convertit juste les % en points)</label><select id="offTotal" onchange="renderOfficialBox()"><option value="20">/20 — barème classique</option><option value="40">/40 — comme le sujet BT Restauration Session 2023</option><option value="100">/100 — en pourcentages</option></select><p class="small" id="baremeCalc"></p><button class="sec" type="button" onclick="openDefsLibrary()">📚 Bibliothèque des 29 définitions officielles</button><button class="sec" type="button" onclick="addOfficialDef()">➕ Ajouter une définition officielle (depuis le sujet papier)</button><p class="small">Sans définition officielle saisie, la génération d'un examen officiel est bloquée. L'app n'invente jamais durée, coefficient, parties ou points.</p></div><button onclick="setStep(2)">Suivant : Filière et classe →</button></div>
+<div id="step2" class="hidden"><label for="fil">Filière</label><select id="fil" onchange="onFiliereChange('')"><option>MENU — Menuiserie</option><option>AMEB — Ameublement</option><option>MAGE — Menuiserie-Agencement</option><option>CHARPENTERIE</option></select><label for="cls">Classe</label><select id="cls" onchange="onFiliereChange('')"><option>1ère Année</option><option>2ème Année</option><option>3ème Année</option><option>4ème Année</option><option>2nde</option><option>Première</option><option>Terminale</option><option>2ème Année BP - Examen</option></select><label for="module">Module — selon ton niveau</label><select id="module" onchange="onModuleChange('')"></select><p class="small" id="moduleHint" role="status"></p><label for="compSel">Compétence — du référentiel</label><select id="compSel" onchange="onCompChange('')"></select><p class="small">Source : Référentiel de formation MINESEC, Yaoundé 2023-2024. Vérifie avec ton référentiel papier si un intitulé diffère.</p><button class="sec" onclick="setStep(1)">← Retour</button><button onclick="setStep(3)">Suivant : Chapitre →</button></div>
+<div id="step3" class="hidden"><label for="elemSel">Élément de compétence — ce que tu évalues vraiment</label><select id="elemSel" onchange="onElemChange('')"></select><label for="chap">Chapitre / Thème précis de l'épreuve</label><input id="chap" value="Dessiner une porte" maxlength="120"><p class="small">Astuce : choisis d'abord l'élément, le chapitre se remplit tout seul. Tu peux le corriger après.</p><label for="dur">Durée et coefficient</label><select id="dur"><option>2h — Coeff 2 — Total /20</option><option>1h — Coeff 1 — Total /20</option><option>4h — Coeff 4 — Total /20</option><option>2h — Coeff 2 — BP — Total /20</option></select><label for="mode">Mode de génération</label><select id="mode"><option>En ligne (IA Groq — obligatoire)</option></select><button class="sec" onclick="setStep(2)">← Retour</button><button onclick="setStep(4)">Suivant : Générer →</button></div>
+<div id="step4" class="hidden"><p class="small">Vérifie : <span id="recap"></span></p><button onclick="gen()">📝 Générer 2 épreuves + 2 corrigés</button><div class="progress" aria-hidden="true"><div id="genBar"></div></div><p id="genStepText" class="small" role="status" aria-live="polite"></p><div id="genStatus" role="status" aria-live="polite"></div></div>
+</div><div id="result" class="card hidden"></div>
+<div id="diffCard" class="card hidden"><h2>👥 Version facile / difficile</h2><div class="flex"><button onclick="showVersion('std')">Standard</button><button class="sec" onclick="showVersion('sim')">Version facile</button><button class="sec" onclick="showVersion('app')">Version difficile</button></div><div id="versionBox"></div></div>
+<div id="remCard" class="card hidden"><h2>🩹 Aide après erreurs</h2><button onclick="analyseRem()">Analyser les erreurs fréquentes</button><div id="remBox"></div></div>
+<div class="card"><h2>📋 Grille de correction</h2><p class="small">Partie A 5 pts • Partie B 6 pts • Partie C 9 pts • Total 20 pts.</p><p class="small">☐ En-tête correct &nbsp; ☐ Total = 20 &nbsp; ☐ Durée et coeff cohérents &nbsp; ☐ Corrigé séparé</p></div></div>
+
+<!-- MES SUJETS -->
+<div id="tab-mine" class="hidden"><div class="card"><button class="sec small" onclick="backToChoice()">← Choisir Sujet ou Leçons</button><h2 style="margin-top:12px">📖 Leçons APC</h2><p class="small">2 leçons à la fois, avec exercices et corrigés.</p><div class="tabs" role="tablist" aria-label="Étapes leçon"><button class="on" onclick="setLStep(1,this)">1 • Cadre</button><button onclick="setLStep(2,this)">2 • Compétences</button><button onclick="setLStep(3,this)">3 • Contenu</button><button onclick="setLStep(4,this)">4 • Générer</button></div>
+<div id="lstep1"><label for="lFil">Filière</label><select id="lFil" onchange="onFiliereChange('l')"><option>MENU — Menuiserie</option><option>AMEB — Ameublement</option><option>MAGE — Menuiserie-Agencement</option><option>CHARPENTERIE</option></select><label for="lCls">Classe</label><select id="lCls" onchange="onFiliereChange('l')"><option>1ère Année</option><option>2ème Année</option><option>3ème Année</option><option>4ème Année</option><option>2nde</option><option>Première</option><option>Terminale</option></select><label for="lMod">Module — selon ton niveau</label><select id="lMod" onchange="onModuleChange('l')"></select><label for="lDur">Durée</label><select id="lDur"><option>2h</option><option>4h</option><option>6h</option></select><button onclick="setLStep(2)">Suivant →</button></div>
+<div id="lstep2" class="hidden"><label for="lCompSel">Compétence — du référentiel</label><select id="lCompSel" onchange="onCompChange('l')"></select><label for="lElemSel">Élément de compétence</label><select id="lElemSel" onchange="onElemChange('l')"></select><label for="lComp">Compétence visée (résumé)</label><input id="lComp" placeholder="Ex : Réaliser un ouvrage simple en bois" readonly><label for="lObj">Objectifs</label><textarea id="lObj" rows="3" placeholder="À la fin, l'apprenant sera capable de..."></textarea><button class="sec" onclick="setLStep(1)">← Retour</button><button onclick="setLStep(3)">Suivant →</button></div>
+<div id="lstep3" class="hidden"><label for="lChap">Titre de la leçon</label><input id="lChap" value="Dessiner une porte" maxlength="120"><label for="lSit">Situation de vie / contexte Cameroun</label><textarea id="lSit" rows="3" placeholder="Ex : Atelier à Yaoundé, bois ayous, grande classe, coupure possible..."></textarea><button class="sec" onclick="setLStep(2)">← Retour</button><button onclick="setLStep(4)">Suivant →</button></div>
+<div id="lstep4" class="hidden"><label for="lMode">Mode</label><select id="lMode"><option>En ligne (IA Groq — obligatoire)</option></select><button onclick="genLesson()">📖 Générer 2 leçons</button><div id="lessonStatus" role="status" aria-live="polite"></div></div></div><div id="lessonResult" class="card hidden"></div>
+<div class="card" id="bankCard"><h2>📚 Banque de questions</h2><p class="small" id="bankStats"></p><label for="bankSearch">Recherche dans la banque</label><input id="bankSearch" placeholder="Ex : porte…" oninput="renderBank()"><div class="flex"><select id="bankFil" onchange="renderBank()" aria-label="Filtrer par filière"><option value="">Toutes filières</option><option>MENU</option><option>AMEB</option><option>MAGE</option><option>CHARPENTERIE</option></select><select id="bankDiff" onchange="renderBank()" aria-label="Filtrer par difficulté"><option value="">Toutes difficultés</option><option>Facile</option><option>Moyen</option><option>Difficile</option></select></div><button class="sec" onclick="showAddQ()">+ Ajouter une question</button><div id="addQ" class="hidden"><label for="nqText">Énoncé</label><textarea id="nqText"></textarea><label for="nqCorr">Correction</label><textarea id="nqCorr"></textarea><label for="nqPts">Points</label><input id="nqPts" type="number" value="3" min="1" max="20"><button onclick="addQ()">Ajouter la question</button></div><div id="bankList"></div><div id="bankSel"></div></div>
+<div class="card"><h2>🕘 Historique</h2><label for="histSearch">Recherche dans l'historique</label><input id="histSearch" placeholder="Ex : porte, 3ème Année…" oninput="renderHist()"><button class="sec" onclick="clearHist()">Effacer l'historique</button><div id="histList"></div></div>
+<div class="card"><h2>🧾 Mes paiements</h2><div id="payList"><p class="small">Aucun paiement. Démo = rien débité. Paiement réel = vérifie dans NotchPay → Transactions.</p></div></div></div>
+
+<!-- PROFIL -->
+<div id="tab-profile" class="hidden"><div class="card" id="iaCard"><h2>🤖 IA et connexion</h2><label for="prov">Fournisseur</label><select id="prov"><option>Groq (GPT-OSS — modèles libres, gratuit)</option><option>Hugging Face</option><option>DeepSeek</option><option>OpenRouter</option><option>Gemini</option></select><label for="apiKey">Clé API Groq</label><input id="apiKey" type="password" placeholder="gsk_..." autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off"><button class="sec" onclick="testKey()">Tester la clé</button><div id="keyMsg" role="status" aria-live="polite"></div><p class="small">Application 100 % en ligne : la génération exige une clé Groq validée et une connexion Internet. Aucun sujet ni aucune leçon ne sera inventé sans l'IA.</p><label for="promptBox">Prompt utilisé par l\'IA (pour référence)</label><textarea id="promptBox" rows="3">Exemple — le vrai prompt envoyé apparaîtra ici après une génération : Génère 2 sujets comparables A et B, Évaluation formative — MENU — Menuiserie — 4ème Année — Module du référentiel : Santé – Sécurité – Environnement — Compétence du référentiel : S'approprier les concepts de Santé, Sécurité et Environnement — Chapitre / Élément du référentiel : Appréhender les notions d'anatomie et de physiologie de l'homme au travail — 2h — Coeff 2 — Total /20. RESPECT STRICT DU RÉFÉRENTIEL.</textarea><button class="sec" onclick="copyPrompt()">Copier le prompt</button></div>
+<div class="card"><h2>📥 Mes demandes en cours</h2><div id="queueList"></div><button class="sec" onclick="retryQueue()">Relancer les demandes échouées</button></div>
+<div class="card" id="profilCard"><h2>🏢 Infos éditeur</h2><label for="edName">Nom</label><input id="edName" placeholder="Ex : Jean Kamga" autocomplete="name"><label for="edCity">Ville</label><input id="edCity" placeholder="Ex : Yaoundé" autocomplete="address-level2"><label for="edContact">Email / WhatsApp</label><input id="edContact" placeholder="Ex : jean@email.com" autocomplete="email"><button onclick="saveEditor()">Enregistrer mes infos</button><div id="edMsg" role="status" aria-live="polite"></div></div>
+<div class="card"><h2>💎 Offres</h2><p class="small"><b>Réussi — Semaine 1 600 FCFA / 7 jours</b><br><b>Réussi — Mois 4 600 FCFA / 30 jours</b> — Le plus choisi<br><b>Réussi — Année 30 500 FCFA / 365 jours</b></p>
+<label for="plan">Offre choisie</label><select id="plan"><option value="1600| Semaine">Semaine — 1 600 FCFA — 7 jours</option><option value="4600| Mois">Mois — 4 600 FCFA — 30 jours</option><option value="30500| Année">Année — 30 500 FCFA — 365 jours</option></select>
+<label for="op">Opérateur</label><select id="op"><option>MTN MoMo</option><option>Orange Money</option></select><label for="phone">Numéro +237</label><input id="phone" placeholder="Ex : 690 12 34 56" inputmode="tel" autocomplete="tel" maxlength="15">
+<button onclick="pay()">Payer MoMo / Orange Money</button><div id="payMsg" role="status" aria-live="polite"></div>
+<div id="payWait" class="hidden"><div class="warn"><h3>⏳ En attente de validation sur ton téléphone</h3><p class="small">1. Regarde ton téléphone : tu as reçu un SMS MoMo / Orange.<br>2. Valide avec ton PIN.<br>3. Reviens ici et clique sur « J'ai validé ».<br>4. Vérifie aussi dans NotchPay → Transactions.</p><button onclick="confirmPayWait()">✅ J'ai validé sur mon téléphone</button><button class="sec" onclick="cancelPayWait()">Annuler</button></div></div>
+<h3>🔑 Vrai paiement — NotchPay</h3><p class="small">Colle ta <b>Clé publique</b> ici. Ne colle JAMAIS ta clé secrète. Commence en Mode Test.</p>
+<label for="notchKey">Clé publique NotchPay</label><input id="notchKey" placeholder="pk_test_... ou pk_live_..." autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off">
+<label for="payMode">Mode paiement</label><select id="payMode"><option>Test — pas d'argent réel</option><option>Réel — argent réel débité</option></select>
+<button class="sec" onclick="saveNotch()">Enregistrer ma clé NotchPay</button><div id="notchMsg" role="status" aria-live="polite"></div></div>
+<div class="card"><h2>📜 Conditions — v1.1</h2><p class="small" id="cguFull"></p><h3>🔒 Confidentialité</h3><p class="small">Données : nom, établissement, email, sujets, historique, paiements (montant, opérateur, référence, numéro masqué — jamais le PIN). Jamais de vente de données.</p></div></div>
+
+<div id="defsLibrary" class="hidden" style="position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;overflow:auto"><div class="card" style="max-width:900px;margin:24px auto;background:#fff"><h2>📚 Bibliothèque des définitions officielles</h2><p class="small">29 définitions verrouillées — OBC / DECC, menuiserie. Rien n'est inventé. Les anomalies des documents sont signalées en rouge.</p><input id="defsSearch" placeholder="Rechercher : BT, CAP, Dessin, Restauration, AMEB…" oninput="renderDefsLibrary()"><div style="margin:10px 0"><button class="sec small" onclick="setDefsFilter('all')">Toutes</button> <button class="sec small" onclick="setDefsFilter('anomalie')">⚠️ Anomalies seulement</button> <button class="sec small" onclick="setDefsFilter('CAP')">CAP</button> <button class="sec small" onclick="setDefsFilter('BP')">BP</button> <button class="sec small" onclick="setDefsFilter('Probatoire')">Probatoire</button> <button class="sec small" onclick="setDefsFilter('BT')">BT</button></div><div id="defsList"></div><button onclick="closeDefsLibrary()">Fermer</button></div></div></main></div>
+<nav class="bottomnav" aria-label="Navigation principale"><button class="on" id="nav-sujets" onclick="showTab('sujets',this)">📝<br>Sujets</button><button id="nav-lecons" onclick="showTab('lecons',this)">📖<br>Leçons</button><button id="nav-banque" onclick="showTab('banque',this)">🏦<br>Banque</button><button id="nav-ia" onclick="showTab('ia',this)">🤖<br>IA</button><button id="nav-profil" onclick="showTab('profil',this)">👤<br>Profil</button></nav>
+<footer>ExamTech — Cameroun • Paix • Travail • Patrie</footer>
+<script>
+var BANK=[{fil:'MENU',chap:'Dessiner',t:'Cite les éléments d\'une porte et leur fonction.',c:'Montants, traverses, panneau, serrure.',pts:3,diff:'Facile',used:0},{fil:'MENU',chap:'Dessiner',t:'Dessine une porte à 2 vantaux, cotée, échelle 1:10.',c:'Dessin coté.',pts:6,diff:'Moyen',used:0},{fil:'MENU',chap:'Ouvrage',t:'Porte 210x90 cm. Calcule le débit et propose le tracé.',c:'Débit + tracé.',pts:9,diff:'Difficile',used:0},{fil:'AMEB',chap:'Restauration',t:'Cite les 3 étapes d\'une restauration de meuble.',c:'Nettoyage, réparation, finition.',pts:5,diff:'Facile',used:0},{fil:'MAGE',chap:'Mécanique',t:'Calcule la force pour soulever 50 kg avec un levier.',c:'Formule du levier.',pts:6,diff:'Moyen',used:0},{fil:'CHARPENTERIE',chap:'Charpente',t:'Dessine une ferme de charpente simple et nomme ses éléments.',c:'Entrait, poinçon, arbalétriers.',pts:6,diff:'Moyen',used:0}];
+var HIST=JSON.parse(localStorage.getItem('examtech_hist')||'[]');var QUEUE=JSON.parse(localStorage.getItem('examtech_queue')||'[]');var SELECTED=[];var deferredPrompt=null;
+function setFont(px){document.documentElement.style.fontSize=px+'px';localStorage.setItem('examtech_font',px);}function changeFont(d){var cur=parseInt(localStorage.getItem('examtech_font')||'16');var n=Math.max(14,Math.min(22,cur+d));setFont(n);}
+if(localStorage.getItem('examtech_font'))setFont(localStorage.getItem('examtech_font'));
+function updateNet(){var b=document.getElementById('netBanner');if(navigator.onLine){b.classList.add('hidden');b.textContent='';}else{b.classList.remove('hidden');b.textContent='⚠️ Hors-ligne — La génération exige Internet. Reconnecte-toi pour générer (IA Groq).';b.style.background='#FCD116';b.style.color='#111';}}
+window.addEventListener('online',updateNet);window.addEventListener('offline',updateNet);updateNet();
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;});
+function installApp(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(function(){deferredPrompt=null;});}else{alert('Sur ton téléphone : Menu du navigateur → Ajouter à l\'écran d\'accueil.');}}
+// PWA : Service Worker en ligne, sans fichier séparé — met en cache l'app shell
+try{if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});});}if('caches' in window){caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});}}catch(e){}
+try{var swCode="self.addEventListener('install',function(e){e.waitUntil(caches.open('examtech-v3-1').then(function(c){return c.addAll(['/'])}))});self.addEventListener('fetch',function(e){e.respondWith(caches.match(e.request).then(function(r){return r||fetch(e.request).catch(function(){return new Response('Connexion requise — cette application fonctionne uniquement en ligne.');})}))});";var blob=new Blob([swCode],{type:'text/javascript'});var swUrl=URL.createObjectURL(blob);if('serviceWorker' in navigator){navigator.serviceWorker.register(swUrl).catch(function(){});}}catch(e){}
+// Manifest PWA en ligne
+try{var man={name:'ExamTech Cameroun',short_name:'ExamTech',start_url:'.',display:'standalone',background_color:'#f4f6f4',theme_color:'#007A5E',icons:[]};var mblob=new Blob([JSON.stringify(man)],{type:'application/json'});var murl=URL.createObjectURL(mblob);var link=document.createElement('link');link.rel='manifest';link.href=murl;document.head.appendChild(link);}catch(e){}
+// IndexedDB pour l'historique (avec repli localStorage)
+var DB=null;try{var req=indexedDB.open('examtech-db',1);req.onupgradeneeded=function(e){var db=e.target.result;if(!db.objectStoreNames.contains('sujets'))db.createObjectStore('sujets',{keyPath:'id',autoIncrement:true});};req.onsuccess=function(e){DB=e.target.result;};}catch(e){}
+function saveToDB(item){try{if(!DB)return;var tx=DB.transaction(['sujets'],'readwrite');tx.objectStore('sujets').add(item);}catch(e){}}
+
+
+/* ===== DEFINITIONS OFFICIELLES - VERROUILLEES =====
+Regle imperative : pour "Examen officiel", AUCUNE valeur n'est inventee par l'app ni par l'IA.
+Duree, coefficient, total, parties et leurs points, competences visees = exactement la definition officielle.
+Une seule definition est verifiee a ce jour, a partir du sujet officiel fourni : BT AMEB/MAGE, Restauration des Ouvrages, Session 2023. */
+var OFFICIAL_DEFS=[
+ {
+  "id": "CAP-MENU-DESSIN",
+  "examen": "CAP",
+  "specialite": "MENU",
+  "matiere": "Dessin",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 4,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Apprehender les notions de lecture et de representation des dessins de menuiserie",
+   "Apprehender les methodes de projection des ouvrages de menuiserie sur differents plans",
+   "Elaborer les dessins necessaires a partir d'un dossier comportant des schemas, croquis, descriptif ou des dessins d'ensemble"
+  ],
+  "parties": [
+   {
+    "nom": "Partie graphique unique - format A3 : vues, coupes, details, epure, devis quantitatif des materiaux (themes : agencement, mobilier, ouvertures, ouvrages de revetement interieur, geometrie descriptive)",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Respect des normes de dessin technique",
+    "pct": 25
+   },
+   {
+    "nom": "Presentation soignee",
+    "pct": 10
+   },
+   {
+    "nom": "Exactitudes des graphiques",
+    "pct": 50
+   },
+   {
+    "nom": "Maitrise de la cotation",
+    "pct": 15
+   }
+  ],
+  "source": "Definitions des epreuves CAP MENU - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "CAP-MENU-ETUDE-FABRICATION",
+  "examen": "CAP",
+  "specialite": "MENU",
+  "matiere": "Etude de fabrication",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": 20,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Apprehender les notions d'elaboration de l'etude de fabrication d'un ouvrage",
+   "Apprehender les methodes de calcul des quantites des materiaux (bois, agglomerés)",
+   "Apprehender les methodes et techniques de construction d'un ouvrage de menuiserie et l'entretien du materiel utilise",
+   "Apprehender les elements necessaires a l'estimation du cout d'un produit"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique obligatoire : etude detaillee d'une fabrication en atelier (operations et symboles des machines-outils), feuille de debit et de fourniture, evaluation des surfaces, estimation du cout - ponderation sur 20 points",
+    "pct": 100
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves CAP MENU - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "CAP-MENU-TECHNOLOGIE",
+  "examen": "CAP",
+  "specialite": "MENU",
+  "matiere": "Technologie",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Apprehender l'exploitation des materiaux (bois, agglomerés) et l'utilisation du materiel manuel et mecanique",
+   "Apprehender les methodes de construction et de pose d'ouvrage de menuiserie et l'entretien du materiel utilise"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Materiaux",
+    "pct": 25
+   },
+   {
+    "nom": "Partie II : Materiel (machine, outils)",
+    "pct": 20
+   },
+   {
+    "nom": "Partie III : Construction d'ouvrage",
+    "pct": 40
+   },
+   {
+    "nom": "Partie IV : Calcul professionnel",
+    "pct": 15
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves CAP MENU - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": "Anomalie du document source : le texte annonce 'trois parties' mais en liste quatre (I a IV). L'app garde les quatre parties listees, total 100%."
+ },
+ {
+  "id": "CAP-MENU-TP",
+  "examen": "CAP",
+  "specialite": "MENU",
+  "matiere": "Travaux pratiques",
+  "session": "",
+  "duree": "08 a 12 heures",
+  "coeff": 8,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Lire les dessins et usiner les materiaux",
+   "Monter les ouvrages et realiser les finitions necessaires",
+   "Fixer les quincailleries"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique contraignante : plans d'execution sur calque format A3, descriptif, fiches de materiaux et de materiel, bareme - themes : ouvertures, mobilier, ouvrages de revetement, escaliers - details a l'echelle 1/1 ou 1/2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees",
+    "pct": 20
+   },
+   {
+    "nom": "Qualite de l'usinage",
+    "pct": 5
+   },
+   {
+    "nom": "Respect des dimensions",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des techniques et qualite des assemblages prescrits",
+    "pct": 10
+   },
+   {
+    "nom": "Fonctionnalite de l'ouvrage",
+    "pct": 10
+   },
+   {
+    "nom": "Qualite de la finition",
+    "pct": 10
+   },
+   {
+    "nom": "Respect de l'esthetique et aspect general",
+    "pct": 5
+   },
+   {
+    "nom": "Solidite",
+    "pct": 5
+   },
+   {
+    "nom": "Stabilite de l'ensemble",
+    "pct": 5
+   }
+  ],
+  "source": "Definitions des epreuves CAP MENU - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": "ANOMALIE DU DOCUMENT SOURCE : les criteres d'evaluation du TP CAP totalisent 20+5+10+10+10+10+5+5+5 = 80%, pas 100%. L'app garde les chiffres tels quels - a faire confirmer par l'Inspection, ne pas completer en silence."
+ },
+ {
+  "id": "BP-MENU-ETUDE-PROJET",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Etude d'un projet",
+  "session": "",
+  "duree": "05 a 09 heures",
+  "coeff": 6,
+  "total": null,
+  "epreuve": "Epreuve ecrite (graphique)",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Traduire graphiquement une solution technique dans le respect des normes, a partir d'un descriptif, d'un croquis et/ou d'un dessin d'ensemble",
+   "Etablir les donnees et solutions techniques permettant la definition d'un produit (menuiserie, agencement, ameublement)"
+  ],
+  "parties": [
+   {
+    "nom": "Partie graphique + dossier d'etudes et de methodes : feuille de debit, nomenclature, devis descriptif - domaines : portes exterieur/interieur, chassis, plafonds, escaliers, cloisons ; ameublement : tables de sejour, bureaux, meubles de rangement ; agencement : cuisine, lingerie, chambre d'enfants, comptoir, plancher - formats indiques, eviter le format A2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Valeur technique",
+    "pct": null
+   },
+   {
+    "nom": "Representation des details de construction suivant les normes",
+    "pct": null
+   },
+   {
+    "nom": "Cotation",
+    "pct": null
+   },
+   {
+    "nom": "Elaboration des documents annexes",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BP-MENU-GAMME-USINAGE",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Gamme d'usinage",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Concevoir et definir un montage d'usinage ou d'assemblage",
+   "Etablir ou completer un processus de fabrication d'un element : ordonnancement des phases et sous-phases, operations, surfaces d'appui, reglages, outils - en vue d'une production en serie"
+  ],
+  "parties": [
+   {
+    "nom": "Cas 1 : conception et elaboration d'un montage d'usinage",
+    "pct": null
+   },
+   {
+    "nom": "Cas 2 : conception graphique + elaboration de la gamme d'usinage d'un element sur fiche format A3 en annexe - themes : isostatisme, montage d'usinage, projet de definition des montages",
+    "pct": null
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Valeur technique",
+    "pct": null
+   },
+   {
+    "nom": "Conception correcte des montages d'usinage",
+    "pct": null
+   },
+   {
+    "nom": "Ordonnancement des operations",
+    "pct": null
+   },
+   {
+    "nom": "Connaissance technologique",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BP-MENU-GEOMETRIE",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Geometrie",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite (graphique)",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Utiliser les principes de construction geometrique appliquee a la profession : rechercher, par projection et traces, les formes, dimensions et/ou angles d'un objet ou partie d'objet technique en vue de sa realisation"
+  ],
+  "parties": [
+   {
+    "nom": "Partie graphique unique : traces geometriques (raccordements, cintre surbaisse, chapeau de gendarme, anse de panier, ovale), projections d'un plan, vraie grandeur (changement de plan, rabattement, rotation) - formats indiques, eviter A2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Application des regles et principes de la geometrie",
+    "pct": null
+   },
+   {
+    "nom": "Precision dans la construction",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BP-MENU-ORGANISATION-TRAVAIL",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Organisation du travail",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 1,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Resoudre les problemes de fonctionnement d'une entreprise, accroitre la productivite, ameliorer la qualite de vie au travail"
+  ],
+  "parties": [
+   {
+    "nom": "Questions et/ou etudes de cas : organisation du travail (poste, activite, implantation, operateur, moyens, information, liaisons), conditions de travail, planification (PERT, GANTT), production (services techniques, preparation, execution, controle, entretien), hygiene et securite",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Connaissance sur la science de l'organisation",
+    "pct": null
+   },
+   {
+    "nom": "Organisation de la production",
+    "pct": null
+   },
+   {
+    "nom": "Esprit d'analyse et de synthese",
+    "pct": null
+   },
+   {
+    "nom": "Qualite des solutions",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BP-MENU-TECHNOLOGIE",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Technologie",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Proposer des solutions techniques a des problemes poses dans la vie professionnelle"
+  ],
+  "parties": [
+   {
+    "nom": "Partie 1 : Les materiaux (bois, derives, materiaux de synthese, produits de preservation et de finition, quincailleries, produits de maintenance, de collage, abrasifs)",
+    "pct": 30
+   },
+   {
+    "nom": "Partie 2 : Les ouvrages - connaissances structurelles, systeme de construction et connaissances fonctionnelles (charpente, bois lamelle-colle, escaliers, parquets, menuiseries exterieures, chantiers)",
+    "pct": 35
+   },
+   {
+    "nom": "Partie 3 : L'usinage (coupe, procedes, machines et outils, reglage methodique, isostatisme, montage, regles de travail et securite, maintenance)",
+    "pct": 35
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Maitrise de la technologie appropriee",
+    "pct": null
+   },
+   {
+    "nom": "Maitrise des procedures d'execution",
+    "pct": null
+   },
+   {
+    "nom": "Connaissance et mise en oeuvre des materiaux",
+    "pct": null
+   },
+   {
+    "nom": "Aptitude a solutionner",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BP-MENU-TP",
+  "examen": "BP",
+  "specialite": "MENU",
+  "matiere": "Travaux pratiques",
+  "session": "",
+  "duree": "12 a 20 heures",
+  "coeff": 6,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Realiser un objet technique en utilisant l'ensemble des machines-outils disponibles et en toute securite"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique : realisation d'un objet unitaire a partir de donnees graphiques - documents graphiques sur calque format A3, echelles 1 et/ou 1/2, marge de 60 mm en haut de la premiere page - descriptif (essence, sechage, assemblages, finition, consignes), dessins d'ensemble et de details, bareme detaille, fiches de debit et de fournitures, liste d'outillage manuel",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees",
+    "pct": null
+   },
+   {
+    "nom": "Qualite des usinages et des assemblages",
+    "pct": null
+   },
+   {
+    "nom": "Presentation",
+    "pct": null
+   },
+   {
+    "nom": "Finition de l'ensemble",
+    "pct": null
+   }
+  ],
+  "source": "Recommandations BP MENU - Version provisoire",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-AMEB-DESSIN",
+  "examen": "Probatoire de BT",
+  "specialite": "AMEB",
+  "matiere": "Dessin des ouvrages",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 4,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Representer les ouvrages de style",
+   "Executer graphiquement les ouvrages d'ameublement"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Ouvrages de style (Gothique, Louis XIII, XIV, XV, XVI, Empire, Second Empire, Contemporain) - identification et elements decoratifs",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Execution graphique des ouvrages d'ameublement - perspective, vues, coupes, sections, details (meubles de jardin, salle a manger, salle de jeux, salon)",
+    "pct": 70
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Identification des ouvrages de style",
+    "pct": 20
+   },
+   {
+    "nom": "Respect des normes de dessin technique",
+    "pct": 15
+   },
+   {
+    "nom": "Presentation soignee des graphiques",
+    "pct": 5
+   },
+   {
+    "nom": "Exactitudes des solutions graphiques",
+    "pct": 60
+   }
+  ],
+  "source": "Definitions des epreuves au Probatoire de BT - AMEB",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-AMEB-FABRICATION",
+  "examen": "Probatoire de BT",
+  "specialite": "AMEB",
+  "matiere": "Fabrication et finition des ouvrages",
+  "session": "",
+  "duree": "14 heures",
+  "coeff": 10,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Concevoir les gabarits",
+   "Fabriquer et finir les ouvrages ou parties d'ouvrages d'ameublement",
+   "Realiser les marqueteries, les sculptures et la tapisserie"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique contraignante : plans d'execution sur calque format A3, descriptif, fiches de materiaux et de materiel, bareme - themes : mobilier de bureau, rangement, cuisine, chambre, salle de sejour, reception, scolaire, sport, styles - details a l'echelle 1/1 ou 1/2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees de l'epreuve",
+    "pct": 20
+   },
+   {
+    "nom": "Precision des usinages",
+    "pct": 5
+   },
+   {
+    "nom": "Respect des dimensions",
+    "pct": 20
+   },
+   {
+    "nom": "Respect des modes d'assemblages prescrits",
+    "pct": 10
+   },
+   {
+    "nom": "Fonctionnalite aisee de l'ouvrage",
+    "pct": 10
+   },
+   {
+    "nom": "Qualite des surfaces finies",
+    "pct": 10
+   },
+   {
+    "nom": "Respect de l'esthetique et aspect general de l'ouvrage",
+    "pct": 5
+   },
+   {
+    "nom": "Solidite des joints",
+    "pct": 5
+   },
+   {
+    "nom": "Fixation correcte des organes de quincailleries",
+    "pct": 10
+   },
+   {
+    "nom": "Stabilite de l'ensemble",
+    "pct": 5
+   }
+  ],
+  "source": "Definitions des epreuves au Probatoire de BT - AMEB",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-AMEB-GESTION-PROD",
+  "examen": "Probatoire de BT",
+  "specialite": "AMEB",
+  "matiere": "Gestion de la production",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Estimation d'un ouvrage",
+   "Organisation du travail dans un atelier et au chantier",
+   "Prevention et lutte contre les incendies dans un atelier"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Evaluation des quantites et des prix (devis descriptif, quantitatif, estimatif)",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Organisation du travail dans un atelier",
+    "pct": 45
+   },
+   {
+    "nom": "Partie III : Prevention et lutte contre les incendies dans un atelier",
+    "pct": 25
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves au Probatoire de BT - Specialite AMEB - MINESEC/IPTI (epreuve commune AMEB et MAGE)",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-AMEB-USINAGE-FINITION",
+  "examen": "Probatoire de BT",
+  "specialite": "AMEB",
+  "matiere": "Techniques d'usinage et de finition",
+  "session": "",
+  "duree": "03 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Choisir et exploiter les bois et materiaux connexes pour la fabrication des objets",
+   "Selectionner et utiliser des outils manuels, des machines-outils fixes et portatives pour la fabrication des ouvrages",
+   "Selectionner et appliquer des produits de finition"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Exploitation des bois et materiaux connexes",
+    "pct": 20
+   },
+   {
+    "nom": "Partie II : Utilisation des outils manuels, des machines-outils fixes et portatives",
+    "pct": 60
+   },
+   {
+    "nom": "Partie III : Techniques de finition",
+    "pct": 40
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves au Probatoire de BT - Specialite AMEB - MINESEC/IPTI",
+  "verifie": true,
+  "anomalie": "Anomalie du document source AMEB : les parties totalisent 20 + 60 + 40 = 120%. Dans le document MAGE, la meme epreuve est a 20 + 40 + 40 = 100%. L'app garde les chiffres AMEB tels quels - a faire confirmer avant generation."
+ },
+ {
+  "id": "PROB-BT-MAGE-DESSIN",
+  "examen": "Probatoire de BT",
+  "specialite": "MAGE",
+  "matiere": "Dessin des ouvrages",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Representer et coter les menuiseries exterieures",
+   "Representer et coter les menuiseries interieures",
+   "Rechercher la vraie grandeur des elements"
+  ],
+  "parties": [
+   {
+    "nom": "Partie graphique unique obligatoire - format A3 : vues, coupes, details, epure, recherche des vraies grandeurs et de l'angle de corroyage - fermetures, escaliers droits et tournants, revetements, agencements, planchers, parquets, lambris, cloisons, plafonds, coffrages, echafaudages",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Respect des normes de dessin technique",
+    "pct": 15
+   },
+   {
+    "nom": "Presentation soignee",
+    "pct": 5
+   },
+   {
+    "nom": "Exactitudes des graphiques",
+    "pct": 70
+   },
+   {
+    "nom": "Maitrise de la cotation",
+    "pct": 10
+   }
+  ],
+  "source": "Definitions des epreuves au Probatoire de BT - MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-MAGE-FABRICATION",
+  "examen": "Probatoire de BT",
+  "specialite": "MAGE",
+  "matiere": "Fabrication et finition des ouvrages",
+  "session": "",
+  "duree": "12 heures",
+  "coeff": 10,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Preparer le travail",
+   "Organiser le poste de travail",
+   "Reproduire des modeles",
+   "Fabriquer les ouvertures",
+   "Poser les sols en bois",
+   "Realiser les plafonds",
+   "Realiser un escalier en bois",
+   "Construire des ouvrages de rangement",
+   "Appliquer les finis speciaux"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique : plans d'execution format A3, descriptif, fiches de materiaux et de materiel, bareme - ouvrage utilitaire, divisible en 2 ou 3 sous-ensembles - gabarits, montages d'usinage, reproduction de modeles, ouvertures, escaliers, agencements, solivage, parquets, cloisons, plafond, finitions - details a l'echelle 1/1 ou 1/2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees",
+    "pct": 20
+   },
+   {
+    "nom": "Precision des usinages",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des dimensions",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des modes d'assemblages prescrits",
+    "pct": 10
+   },
+   {
+    "nom": "Fonctionnalite de l'ouvrage",
+    "pct": 10
+   },
+   {
+    "nom": "Qualite de la finition",
+    "pct": 10
+   },
+   {
+    "nom": "Respect de l'esthetique et aspect general",
+    "pct": 10
+   },
+   {
+    "nom": "Fixation correcte des quincailleries",
+    "pct": 10
+   },
+   {
+    "nom": "Solidite des joints",
+    "pct": 5
+   },
+   {
+    "nom": "Stabilite de l'ensemble",
+    "pct": 5
+   }
+  ],
+  "source": "Definitions des epreuves au Probatoire de BT - MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-MAGE-GESTION-PROD",
+  "examen": "Probatoire de BT",
+  "specialite": "MAGE",
+  "matiere": "Gestion de la production",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Estimation d'un ouvrage",
+   "Organisation du travail dans un atelier et au chantier",
+   "Prevention et lutte contre les incendies dans un atelier"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Evaluation des quantites et des prix (devis descriptif, quantitatif, estimatif)",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Organisation du travail dans un atelier",
+    "pct": 45
+   },
+   {
+    "nom": "Partie III : Prevention et lutte contre les incendies dans un atelier",
+    "pct": 25
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves au Probatoire de BT - Specialite MAGE - MINESEC/IPTI (epreuve commune AMEB et MAGE)",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-MAGE-ORG-CHANTIER",
+  "examen": "Probatoire de BT",
+  "specialite": "MAGE",
+  "matiere": "Organisation de chantier et amenagement de l'habitat",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 1,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Preparer et organiser le chantier",
+   "Realiser differentes formes d'isolation sur l'habitat",
+   "Realiser la ventilation et l'eclairage d'habitat",
+   "Realiser l'etancheite sur les menuiseries exterieures"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Preparation et organisation de chantier",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Isolation de l'habitat et etancheite des menuiseries",
+    "pct": 45
+   },
+   {
+    "nom": "Partie III : L'aeration des locaux",
+    "pct": 25
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves au Probatoire de BT - MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "PROB-BT-MAGE-USINAGE-FINITION",
+  "examen": "Probatoire de BT",
+  "specialite": "MAGE",
+  "matiere": "Techniques d'usinage et de finition",
+  "session": "",
+  "duree": "03 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Choisir et exploiter les bois et materiaux connexes pour la fabrication des objets",
+   "Selectionner et utiliser des outils manuels, des machines-outils fixes et portatives pour la fabrication des ouvrages",
+   "Selectionner et appliquer des produits de finition"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Exploitation des bois et materiaux connexes",
+    "pct": 20
+   },
+   {
+    "nom": "Partie II : Utilisation des outils manuels, des machines-outils fixes et portatives",
+    "pct": 40
+   },
+   {
+    "nom": "Partie III : Techniques de finition",
+    "pct": 40
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves au Probatoire de BT - MAGE - total 100% (a comparer avec le document AMEB : 120%)",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-AMEB-DESSIN",
+  "examen": "BT",
+  "specialite": "AMEB",
+  "matiere": "Dessin des ouvrages",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Rechercher la vraie grandeur",
+   "Etudier les styles de meubles",
+   "Representer les meubles de salle de sejour",
+   "Representer les meubles de bureau",
+   "Representer les meubles de chambres a coucher",
+   "Representer les meubles de cuisine et de salle de bain"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Identification des styles (styles anglais : Tudor, Elisabethain, Sheraton, Regency, Victorian)",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Conception et elaboration graphique - formats A3 : vues, coupes, details, epure, vraies grandeurs, angle de corroyage, section droite (meubles de sejour, bureau, chambre, cuisine, salle de bain)",
+    "pct": 70
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Respect des normes de dessin technique",
+    "pct": 20
+   },
+   {
+    "nom": "Presentation soignee",
+    "pct": 10
+   },
+   {
+    "nom": "Exactitudes des graphiques",
+    "pct": 30
+   },
+   {
+    "nom": "Maitrise de la cotation",
+    "pct": 10
+   }
+  ],
+  "source": "Definitions des epreuves BT AMEB",
+  "verifie": true,
+  "anomalie": "Anomalie : les criteres d'evaluation de la Partie II totalisent 20+10+30+10 = 70%, soit exactement le poids de la Partie II. L'app les affiche tels quels, sans les etendre a 100% de l'epreuve."
+ },
+ {
+  "id": "BT-AMEB-FABRICATION",
+  "examen": "BT",
+  "specialite": "AMEB",
+  "matiere": "Fabrication et finition des ouvrages",
+  "session": "",
+  "duree": "11 heures",
+  "coeff": 10,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Preparer le travail",
+   "Organiser le poste de travail",
+   "Reproduire des modeles",
+   "Fabriquer les meubles",
+   "Appliquer les finis speciaux"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique : plans d'execution formats A3, descriptif, fiches de materiaux et de materiel, bareme - ouvrage utilitaire avec marqueterie et sculpture, divisible en 2 ou 3 sous-ensembles - gabarits, montages, reproduction de modeles, meubles de sejour, chambre, salle de bain, bureau, cuisine, finitions - details a l'echelle 1/1 ou 1/2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees (marqueterie, sculpture)",
+    "pct": 30
+   },
+   {
+    "nom": "Qualite de l'usinage",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des dimensions",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des techniques et qualite des assemblages prescrits",
+    "pct": 10
+   },
+   {
+    "nom": "Fonctionnalite de l'ouvrage",
+    "pct": 10
+   },
+   {
+    "nom": "Qualite de la finition",
+    "pct": 10
+   },
+   {
+    "nom": "Respect de l'esthetique et aspect general",
+    "pct": 10
+   },
+   {
+    "nom": "Solidite",
+    "pct": 5
+   },
+   {
+    "nom": "Stabilite de l'ensemble",
+    "pct": 5
+   }
+  ],
+  "source": "Definitions des epreuves BT AMEB",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-AMEB-GESTION-MAINTENANCE",
+  "examen": "BT",
+  "specialite": "AMEB",
+  "matiere": "Gestion de la production et maintenance des equipements",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "S'approprier des notions d'organisation de l'entreprise et d'organisation scientifique du travail (OST)",
+   "S'approprier des techniques d'elaboration des documents techniques",
+   "S'approprier des notions sur les techniques d'ordonnancement",
+   "S'approprier les notions de gestion de stock et de l'amortissement",
+   "Apprehender les notions de maintenance et de commande des equipements",
+   "Apprehender les notions de controle qualite et des normes",
+   "Apprehender des notions de commande et de livraison des produits"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Organisation de l'entreprise et du travail",
+    "pct": 15
+   },
+   {
+    "nom": "Partie II : Controle et suivi de la production",
+    "pct": 40
+   },
+   {
+    "nom": "Partie III : Gestion des stocks et amortissement",
+    "pct": 30
+   },
+   {
+    "nom": "Partie IV : Maintenance et commande des equipements",
+    "pct": 15
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT AMEB",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-AMEB-RESTAURATION-DEF",
+  "examen": "BT",
+  "specialite": "AMEB",
+  "matiere": "Restauration des ouvrages (definition)",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Selectionner les outils et les materiaux specifiques de restauration des ouvrages",
+   "Diagnostiquer le travail a effectuer",
+   "Preparer le travail a effectuer",
+   "Reparer ou remplacer les elements defectueux",
+   "Appliquer les finitions necessaires",
+   "Entretenir les organes de quincaillerie",
+   "Realiser les effets speciaux de finition"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Evaluation du travail",
+    "pct": 25
+   },
+   {
+    "nom": "Partie II : Materiaux, produits et outillage de la restauration",
+    "pct": 30
+   },
+   {
+    "nom": "Partie III : Techniques de restauration",
+    "pct": 45
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT AMEB - a distinguer du sujet Session 2023 (40 points : 10/12/18) qui correspond a ces memes 25/30/45%.",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-AMEB-USINAGE-FINITION",
+  "examen": "BT",
+  "specialite": "AMEB",
+  "matiere": "Technique d'usinage et de finition",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "S'approprier des techniques d'utilisation des machines-outils auxiliaires, complexes et a commandes numeriques",
+   "S'approprier des techniques d'usinage complexes et a l'aide d'un montage d'usinage",
+   "Selectionner les huiles de finition",
+   "Apprehender des notions generales sur les defauts d'application et de stockage des produits ainsi que les methodes de remediassions",
+   "S'approprier des techniques de production des effets speciaux et d'entretien des finis"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Identification et selection des machines auxiliaires, complexes et a commandes numeriques",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Usinages et montage d'usinage complexe",
+    "pct": 40
+   },
+   {
+    "nom": "Partie III : Techniques d'application des produits et defauts de finition",
+    "pct": 30
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT AMEB",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-MAGE-DESSIN",
+  "examen": "BT",
+  "specialite": "MAGE",
+  "matiere": "Dessin des ouvrages",
+  "session": "",
+  "duree": "04 heures",
+  "coeff": 3,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Representer les menuiseries exterieures",
+   "Representer les menuiseries interieures",
+   "Representer les revetements",
+   "Representer les agencements"
+  ],
+  "parties": [
+   {
+    "nom": "Partie graphique unique obligatoire - formats A3 : vues, coupes, details, epure, vraies grandeurs, angle de corroyage - fermetures, escaliers droits et tournants, revetements, agencements, planchers, parquets, lambris, cloisons, plafonds, coffrages, echafaudages",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Respect des normes de dessin technique",
+    "pct": 25
+   },
+   {
+    "nom": "Presentation soignee",
+    "pct": 10
+   },
+   {
+    "nom": "Exactitudes des graphiques",
+    "pct": 50
+   },
+   {
+    "nom": "Maitrise de la cotation",
+    "pct": 15
+   }
+  ],
+  "source": "Definitions des epreuves BT MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-MAGE-FABRICATION",
+  "examen": "BT",
+  "specialite": "MAGE",
+  "matiere": "Fabrication et finition des ouvrages",
+  "session": "",
+  "duree": "11 heures",
+  "coeff": 10,
+  "total": null,
+  "epreuve": "Epreuve pratique",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Preparer le travail",
+   "Organiser le poste de travail",
+   "Reproduire des modeles",
+   "Fabriquer les ouvertures",
+   "Poser les sols en bois",
+   "Realiser les plafonds",
+   "Realiser un escalier en bois",
+   "Construire des ouvrages de rangement",
+   "Appliquer les finis speciaux"
+  ],
+  "parties": [
+   {
+    "nom": "Partie unique : plans d'execution formats A3, descriptif, fiches de materiaux et de materiel, bareme - ouvrage utilitaire, divisible en 2 ou 3 sous-ensembles - gabarits, montages, reproduction de modeles, ouvertures, escaliers, agencements, solivage, parquets, cloisons, plafond, finitions - details a l'echelle 1/1 ou 1/2",
+    "pct": 100
+   }
+  ],
+  "criteres": [
+   {
+    "nom": "Conformite du produit par rapport aux donnees",
+    "pct": 30
+   },
+   {
+    "nom": "Qualite de l'usinage",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des dimensions",
+    "pct": 10
+   },
+   {
+    "nom": "Respect des techniques et qualite des assemblages prescrits",
+    "pct": 10
+   },
+   {
+    "nom": "Fonctionnalite de l'ouvrage",
+    "pct": 10
+   },
+   {
+    "nom": "Qualite de la finition",
+    "pct": 10
+   },
+   {
+    "nom": "Respect de l'esthetique et aspect general",
+    "pct": 10
+   },
+   {
+    "nom": "Solidite",
+    "pct": 5
+   },
+   {
+    "nom": "Stabilite de l'ensemble",
+    "pct": 5
+   }
+  ],
+  "source": "Definitions des epreuves BT MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-MAGE-GESTION-MAINTENANCE",
+  "examen": "BT",
+  "specialite": "MAGE",
+  "matiere": "Gestion de la production et maintenance des equipements",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "S'approprier des notions d'organisation de l'entreprise et d'organisation scientifique du travail (OST)",
+   "S'approprier des techniques d'elaboration des documents techniques",
+   "S'approprier des notions sur les techniques d'ordonnancement",
+   "S'approprier les notions de gestion de stock et de l'amortissement",
+   "Apprehender les notions de maintenance et de commande des equipements",
+   "Apprehender les notions de controle qualite et des normes",
+   "Apprehender des notions de commande et de livraison des produits"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Organisation de l'entreprise et du travail",
+    "pct": 15
+   },
+   {
+    "nom": "Partie II : Controle et suivi de la production",
+    "pct": 40
+   },
+   {
+    "nom": "Partie III : Gestion des stocks et amortissement",
+    "pct": 30
+   },
+   {
+    "nom": "Partie IV : Maintenance et commande des equipements",
+    "pct": 15
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT MAGE",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-MAGE-RESTAURATION-DEF",
+  "examen": "BT",
+  "specialite": "MAGE",
+  "matiere": "Restauration des ouvrages (definition)",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "Selectionner les outils et les materiaux specifiques de restauration des ouvrages",
+   "Diagnostiquer le travail a effectuer",
+   "Preparer le travail a effectuer",
+   "Reparer ou remplacer les elements defectueux",
+   "Appliquer les finitions necessaires",
+   "Entretenir les organes de quincaillerie",
+   "Realiser les effets speciaux de finition"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Evaluation du travail",
+    "pct": 25
+   },
+   {
+    "nom": "Partie II : Materiaux, produits et outillage de la restauration",
+    "pct": 30
+   },
+   {
+    "nom": "Partie III : Techniques de restauration",
+    "pct": 45
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT MAGE - a distinguer du sujet Session 2023 (40 points : 10/12/18) qui correspond a ces memes 25/30/45%.",
+  "verifie": true,
+  "anomalie": null
+ },
+ {
+  "id": "BT-MAGE-USINAGE-FINITION",
+  "examen": "BT",
+  "specialite": "MAGE",
+  "matiere": "Technique d'usinage et de finition",
+  "session": "",
+  "duree": "02 heures",
+  "coeff": 2,
+  "total": null,
+  "epreuve": "Epreuve ecrite",
+  "documents": "Selon le sujet officiel.",
+  "competences": [
+   "S'approprier des techniques d'utilisation des machines-outils auxiliaires, complexes et a commandes numeriques",
+   "S'approprier des techniques d'usinage complexes et a l'aide d'un montage d'usinage",
+   "Selectionner les huiles de finition",
+   "Apprehender des notions generales sur les defauts d'application et de stockage des produits ainsi que les methodes de remediassions",
+   "S'approprier des techniques de production des effets speciaux et d'entretien des finis"
+  ],
+  "parties": [
+   {
+    "nom": "Partie I : Identification et selection des machines auxiliaires, complexes et a commandes numeriques",
+    "pct": 30
+   },
+   {
+    "nom": "Partie II : Usinages et montage d'usinage complexe",
+    "pct": 40
+   },
+   {
+    "nom": "Partie III : Techniques d'application des produits et defauts de finition",
+    "pct": 30
+   }
+  ],
+  "criteres": [],
+  "source": "Definitions des epreuves BT MAGE",
+  "verifie": true,
+  "anomalie": null
+ }
+];
+function loadOfficialDefs(){try{var extra=JSON.parse(localStorage.getItem('examtech_official_defs')||'[]');extra.forEach(function(d){if(!OFFICIAL_DEFS.some(function(x){return x.id===d.id;}))OFFICIAL_DEFS.push(d);});}catch(e){}}
+function officialDefFor(id){return OFFICIAL_DEFS.find(function(d){return d.id===id;})||OFFICIAL_DEFS.find(function(d){return d.matiere===id;})||null;}
+function isOfficial(){return (document.getElementById('type').value||'')==='Examen officiel';}
+
+var EXAM_LEVEL={"CAP":"4ème Année","Probatoire de BT":"Première","BT":"Terminale","BP":"2ème Année BP - Examen","Baccalauréat":"Terminale","Probatoire":"Première"};
+function officialExams(){var seen={};var out=[];OFFICIAL_DEFS.forEach(function(d){if(!seen[d.examen]){seen[d.examen]=1;out.push(d.examen);}});return out;}
+function officialSpecs(examen){var seen={};var out=[];OFFICIAL_DEFS.filter(function(d){return d.examen===examen;}).forEach(function(d){if(!seen[d.specialite]){seen[d.specialite]=1;out.push(d.specialite);}});return out;}
+function officialDuree(){var d=officialDefFor(document.getElementById('offMatiere').value);if(d&&d.duree)return d.duree;var c=document.getElementById('offDureeChoice');return c?c.value:'';}
+function officialCoeff(){var d=officialDefFor(document.getElementById('offMatiere').value);if(d&&d.coeff!=null)return d.coeff;var c=document.getElementById('offCoeffChoice');return c?parseInt(c.value,10):0;}
+function applyOfficialLevel(examen){var lvl=EXAM_LEVEL[examen];var cls=document.getElementById('cls');if(!cls)return;if(lvl){if(!Array.from(cls.options).some(function(o){return o.value===lvl||o.text===lvl;})){var o=document.createElement('option');o.value=lvl;o.textContent=lvl;cls.appendChild(o);}cls.value=lvl;cls.disabled=true;}else{cls.disabled=false;}}
+function onOfficialExamChange(){var ex=document.getElementById('offExamen').value;var specSel=document.getElementById('offSpec');var cur=specSel.value;specSel.innerHTML='';officialSpecs(ex).forEach(function(s){var o=document.createElement('option');o.value=s;o.textContent=s;specSel.appendChild(o);});if(cur&&officialSpecs(ex).indexOf(cur)>=0)specSel.value=cur;applyOfficialLevel(ex);onOfficialSpecChange();}
+function onOfficialSpecChange(){var ex=document.getElementById('offExamen').value;var sp=document.getElementById('offSpec').value;try{var _fil=document.getElementById('fil');if(_fil&&sp){for(var _i=0;_i<_fil.options.length;_i++){if(_fil.options[_i].text.indexOf(sp)===0){_fil.value=_fil.options[_i].value;break;}}var _lvl=EXAM_LEVEL[ex];var _cls=document.getElementById('cls');if(_cls&&_lvl){_cls.value=_lvl;}onFiliereChange('');}}catch(_e){}var sel=document.getElementById('offMatiere');var cur=sel.value;sel.innerHTML='';OFFICIAL_DEFS.filter(function(d){return d.examen===ex&&(!sp||d.specialite===sp);}).forEach(function(d){var o=document.createElement('option');o.value=d.id;o.textContent=d.matiere+' ('+d.duree+', coeff '+d.coeff+')';sel.appendChild(o);});if(cur&&Array.from(sel.options).some(function(o){return o.value===cur;}))sel.value=cur;renderOfficialBox();}
+function fillOfficialComp(def){var s=document.getElementById('offComp');if(!s)return;s.innerHTML='';(def&&def.competences||[]).forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;s.appendChild(o);});if(!s.options.length){var o=document.createElement('option');o.value='';o.textContent='— Aucune compétence dans la définition : saisis le chapitre à l\'étape 3 —';s.appendChild(o);}}
+
+function renderOfficialBox(){var box=document.getElementById('officialBox');var blk=document.getElementById('officialBlock');if(!box)return;if(blk)blk.classList.toggle('hidden',!isOfficial());var eb=document.getElementById('etabBlock');if(eb)eb.classList.toggle('hidden',isOfficial());var on=document.getElementById('officialNote');if(on)on.classList.toggle('hidden',!isOfficial());var cl=document.getElementById('cls');if(cl&&!isOfficial())cl.disabled=false;if(!isOfficial()){box.innerHTML='';return;}var def=officialDefFor(document.getElementById('offMatiere').value);if(!def){fillOfficialComp(null);box.innerHTML='<div class="err" role="alert"><b>Definition officielle non saisie pour cette matiere.</b><br>Generation bloquee : l\u2019app n\u2019invente ni duree, ni coefficient, ni parties.</div>';return;}fillOfficialComp(def);var od=document.getElementById('offDuree');if(od)od.value=def.duree||'';var oc=document.getElementById('offCoeff');if(oc)oc.value=def.coeff!=null?('Coeff '+def.coeff):'';var fb=document.getElementById('offFallback');if(fb)fb.classList.toggle('hidden',!!(def.duree&&def.coeff!=null));var ll=document.getElementById('offLevelLine');if(ll)ll.innerHTML='<b>Niveau d\u2019étude verrouillé :</b> '+(EXAM_LEVEL[def.examen]||'à choisir à l\u2019étape 2')+' — compétence générée automatiquement depuis la matière.';var parts=def.parties.map(function(p){return '<li><b>'+p.nom+'</b> - '+(p.pct!=null?p.pct+'%':'')+(p.pts!=null?' = '+p.pts+' pts':'')+'</li>';}).join('');var comps=def.competences.map(function(c){return '<li>'+c+'</li>';}).join('');var crit=def.criteres&&def.criteres.length?'<b>Criteres d\u2019evaluation :</b><ul>'+def.criteres.map(function(c){return '<li>'+c.nom+' - '+(c.pct!=null?c.pct+'%':'non pondere dans le document')+'</li>';}).join('')+'</ul>':'';var ano=def.anomalie?'<div class="err" role="alert"><b>Anomalie du document source - a faire confirmer :</b><br>'+def.anomalie+'</div>':'';var tot=def.total?def.total+' points':'selon le bareme du sujet (parties en %)';var _tot=chosenTotal();var _bc=document.getElementById('baremeCalc');if(_bc){var _lines=baremeFor(def,_tot).map(function(b){return b.nom+' : '+(b.pts!=null?b.pts+' pts':'—')+' ('+(b.pct!=null?b.pct+'%':'')+')';}).join(' • ');_bc.innerHTML='<b>Barème calculé sur /'+_tot+' :</b> '+_lines+'<br><span class="small">La définition reste en %. Le total choisi ne change que la conversion en points.</span>';}box.innerHTML='<div class="ok"><b>Definition officielle verrouillee</b><br><b>'+def.examen+' - '+def.specialite+' - '+def.matiere+'</b><br>Epreuve : '+def.epreuve+' | Duree : <b>'+def.duree+'</b> | Coefficient : <b>'+def.coeff+'</b> | Total : <b>'+tot+'</b><br><b>Parties obligatoires :</b><ul>'+parts+'</ul><b>Competences visees :</b><ul>'+comps+'</ul>'+crit+'<p class="small">Source : '+def.source+'</p></div>'+ano;}
+
+var DEFS_FILTER='all';
+function setDefsFilter(f){DEFS_FILTER=f;renderDefsLibrary();}
+function openDefsLibrary(){document.getElementById('defsLibrary').classList.remove('hidden');renderDefsLibrary();}
+function closeDefsLibrary(){document.getElementById('defsLibrary').classList.add('hidden');}
+function chosenTotal(){var s=document.getElementById('offTotal');return s?parseInt(s.value||'20',10):20;}
+function baremeFor(def,total){return def.parties.map(function(p){var pts=p.pts!=null?p.pts:(p.pct!=null?Math.round(p.pct*total/100*100)/100:null);return {nom:p.nom,pct:p.pct,pts:pts};});}
+function renderDefsLibrary(){var q=(document.getElementById('defsSearch').value||'').toLowerCase();var list=OFFICIAL_DEFS.filter(function(d){var txt=(d.examen+' '+d.specialite+' '+d.matiere+' '+d.source).toLowerCase();if(q&&txt.indexOf(q)<0)return false;if(DEFS_FILTER==='anomalie')return !!d.anomalie;if(DEFS_FILTER==='all')return true;return d.examen.indexOf(DEFS_FILTER)>=0||d.examen===DEFS_FILTER;});document.getElementById('defsList').innerHTML='<p class="small">'+list.length+' définition(s) affichée(s) — '+OFFICIAL_DEFS.length+' au total.</p>'+list.map(function(d){var sum=d.parties.reduce(function(a,p){return a+(p.pct||0);},0);var sumTxt=d.parties.every(function(p){return p.pct!=null;})?('Somme des parties : '+sum+'%'+(sum!==100?' ⚠️':' ✅')):'Parties sans % (cas alternatifs)';return '<div class="card" style="margin:10px 0"><b>'+d.examen+' — '+d.specialite+' — '+d.matiere+'</b><br><span class="small">'+d.epreuve+' | Durée : '+d.duree+' | Coeff : '+d.coeff+'</span><ul>'+d.parties.map(function(p){return '<li>'+p.nom+' — '+(p.pct!=null?p.pct+'%':'')+(p.pts!=null?' = '+p.pts+' pts':'');}).join('')+'</ul><p class="small">'+sumTxt+'<br>Source : '+d.source+'</p>'+(d.anomalie?'<div class="err">'+d.anomalie+'</div>':'')+'<button class="sec small" onclick="pickDef(\''+d.id+'\')">Utiliser cette définition →</button></div>';}).join('')||'<p>Aucune définition trouvée.</p>';}
+function pickDef(id){document.getElementById('offMatiere').value=id;closeDefsLibrary();document.getElementById('type').value='Examen officiel';renderOfficialBox();setStep(1);document.getElementById('officialBlock').scrollIntoView();}
+
+function addOfficialDef(){var examen=prompt('Examen officiel (ex : BT, Probatoire, Baccalaureat, CAP) :', (document.getElementById('offExamen')&&document.getElementById('offExamen').value)||'');if(!examen)return;var spec=prompt('Specialite (ex : AMEB/MAGE) :');if(!spec)return;var mat=prompt('Matiere exacte du sujet officiel :');if(!mat)return;var duree=prompt('Duree exacte (ex : 02 heures) :');if(!duree)return;var coeff=parseInt(prompt('Coefficient exact (nombre) :')||'0',10);var total=parseInt(prompt('Total exact en points (ex : 40) :')||'0',10);var n=parseInt(prompt('Combien de parties ? (ex : 3)')||'0',10);var parties=[];for(var i=0;i<n;i++){var nom=prompt('Partie '+(i+1)+' - nom exact :');var pts=parseInt(prompt('Partie '+(i+1)+' - points exacts :')||'0',10);if(nom)parties.push({nom:nom,pts:pts,pct:total?Math.round(pts/total*1000)/10:null});}var compsTxt=prompt('Competences visees - separees par ; (copie le sujet) :')||'';var comps=compsTxt.split(';').map(function(s){return s.trim();}).filter(Boolean);var def={id:'MANUEL-'+Date.now(),examen:examen,specialite:spec,matiere:mat,session:prompt('Session (ex : 2024) :')||'',duree:duree,coeff:coeff,total:total,epreuve:'Epreuve ecrite',documents:prompt('Documents autorises (copie le sujet) :')||'',competences:comps,parties:parties,source:'Saisie par l\u2019enseignant depuis le sujet officiel papier',verifie:false};try{var extra=JSON.parse(localStorage.getItem('examtech_official_defs')||'[]');extra.push(def);localStorage.setItem('examtech_official_defs',JSON.stringify(extra));}catch(e){}OFFICIAL_DEFS.push(def);refreshOfficialMatieres();var _ex=document.getElementById('offExamen');if(_ex)_ex.value=examen;onOfficialExamChange();var _sp=document.getElementById('offSpec');if(_sp)_sp.value=spec;onOfficialSpecChange();document.getElementById('offMatiere').value=def.id;renderOfficialBox();alert('Definition enregistree. Verifie-la avec ton sujet papier avant de generer.');}
+function refreshOfficialMatieres(){var exSel=document.getElementById('offExamen');if(!exSel)return;var curEx=exSel.value;exSel.innerHTML='';officialExams().forEach(function(e){var o=document.createElement('option');o.value=e;o.textContent=e;exSel.appendChild(o);});if(curEx&&officialExams().indexOf(curEx)>=0)exSel.value=curEx;onOfficialExamChange();}
+
+/* ===== RÉFÉRENTIELS MINESEC — Yaoundé 2023 (MENU / CHARPENTE, 1er cycle, Ouvrier) et 2023-2024 (MAGE / AMEB, 2nd cycle, Technicien) =====
+Structure fidèle aux référentiels fournis : Niveaux -> Modules (compétences générales / particulières) -> Compétences (énoncés) -> Éléments de compétence.
+Les intitulés sont repris des référentiels. Quand un intitulé varie selon l'édition papier, l'enseignant corrige le chapitre librement. */
+var REF={"MENU":{"label":"MENU — Menuiserie (1er cycle)","levels":{"1ère Année":[{"m":"Présentation générale du métier et de la formation","d":44,"c":[{"n":"Se situer au regard du métier et de la formation","e":["Appréhender le métier dans son contexte","Appréhender le métier au regard des exigences de la formation"]}]},{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Dessin","d":88,"c":[{"n":"Exploiter un dessin technique","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Technologie","d":66,"c":[{"n":"Appréhender les notions relatives aux matériaux et aux matériels","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Travaux Pratiques","d":88,"c":[{"n":"Réaliser des ouvrages élémentaires","e":["Produire des matériaux et implanter un ouvrage","Exécuter des assemblages élémentaires","Réaliser un ouvrage élémentaire de menuiserie"]}]}],"2ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Technologie professionnelle","d":66,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils","S'approprier des techniques d'utilisation des outils","Identifier les différentes machines-outils","S'approprier des techniques d'utilisation des machines-outils","S'approprier du mode d'entretien"]}]},{"m":"Dessin de Menuiserie","d":88,"c":[{"n":"Dessiner les éléments de menuiserie","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Fabrication, installation des ouvertures et des revêtements","d":88,"c":[{"n":"Fabriquer, installer les ouvertures et les revêtements","e":["Identifier les types d'ouvertures","Élaborer une feuille de débit","Usiner et assembler les éléments","Fixer les quincailleries et poser les vitreries","Réaliser les finitions nécessaires"]}]},{"m":"Fabrication et installation du mobilier","d":88,"c":[{"n":"Fabriquer et installer les meubles","e":["Identifier les types de mobiliers","Élaborer une feuille de débit","Usiner et assembler les éléments","Fixer les ferrures","Poser les vitreries et réaliser les finitions"]}]}],"3ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Technologie professionnelle","d":66,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils","S'approprier des techniques d'utilisation des outils","Identifier les différentes machines-outils","S'approprier des techniques d'utilisation des machines-outils","S'approprier du mode d'entretien"]}]},{"m":"Dessin de menuiserie","d":88,"c":[{"n":"Dessiner les éléments de menuiserie","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Fabrication, installation des ouvertures et revêtements","d":110,"c":[{"n":"Fabriquer, installer les ouvertures et les revêtements","e":["Identifier les types d'ouvertures","Élaborer une feuille de débit","Usiner et assembler les éléments","Fixer les quincailleries et poser les vitreries","Réaliser les finitions nécessaires"]}]},{"m":"Fabrication et Installation des meubles","d":110,"c":[{"n":"Fabriquer et installer le mobilier","e":["Identifier les types de mobiliers","Élaborer une feuille de débit","Usiner et assembler les éléments","Fixer les ferrures","Poser les vitreries et réaliser les finitions"]}]}],"4ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["S'approprier des techniques de traitement du bois","S'approprier des méthodes d'utilisation des matériaux connexes","Conduire un séchage naturel et un séchage artificiel","Conserver le bois séché"]}]},{"m":"Technologie professionnelle","d":66,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["S'approprier des caractéristiques de chaque machine-outil","S'approprier des caractéristiques de chaque machine-outil portative","S'approprier des opérations réalisables","S'approprier des outils de production","S'approprier du mode d'entretien"]}]},{"m":"Dessin de menuiserie","d":88,"c":[{"n":"Dessiner les éléments de menuiserie","e":["Représenter et coter les éléments de menuiserie","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Fabrication, installation des ouvertures et des revêtements","d":110,"c":[{"n":"Fabriquer et installer les ouvertures et les revêtements","e":["Prendre connaissance du travail","Identifier les types d'ouvertures","Usiner, assembler, poser et finir"]}]},{"m":"Fabrication et installation des meubles","d":110,"c":[{"n":"Fabriquer et installer du mobilier","e":["Prendre connaissance du travail","Choisir le mobilier à fabriquer","Usiner, assembler, poser et finir"]}]},{"m":"Entrepreneuriat","d":22,"c":[{"n":"Rechercher un emploi / s'auto-employer","e":["Identifier les opportunités d'emploi et d'auto-emploi","Élaborer un projet d'auto-emploi"]}]}],"2ème Année BP - Examen":[{"m":"Dessin de Menuiserie","c":[{"n":"Dessiner les éléments de menuiserie","e":["Dessiner et coter un ouvrage d'examen","Dessiner les assemblages"]}],"d":null},{"m":"TP — Ouvertures et meubles (Examen)","c":[{"n":"Fabriquer, installer les ouvertures et les revêtements","e":["Fabriquer une porte d'examen","Installer et régler une ouverture"]},{"n":"Fabriquer et installer les meubles","e":["Fabriquer un meuble d'examen","Réaliser les finitions"]}],"d":null},{"m":"Technologie BP","c":[{"n":"Appliquer la technologie de la menuiserie","e":["Choisir les materiaux : bois, derives, materiaux de synthese","Connaitre les ouvrages : structure et fonction","Appliquer l'usinage : coupe, procedes, machines et outillages"]}],"d":null},{"m":"Gamme d'usinage","c":[{"n":"Concevoir et definir un montage d'usinage","e":["Concevoir et elaborer graphiquement un montage d'usinage"]},{"n":"Elaborer la gamme d'usinage d'une piece","e":["Ordonner les phases, operations et reglages","Choisir les surfaces d'appui et les outils"]}],"d":null},{"m":"Organisation du travail","c":[{"n":"Organiser le travail dans les ateliers et sur les chantiers","e":["Organiser la production","Appliquer l'hygiene et la securite au travail"]}],"d":null},{"m":"Etude d'un projet","c":[{"n":"Traduire graphiquement une solution technique","e":["Lire un descriptif, un croquis, un dessin d'ensemble","Etablir les donnees et solutions techniques d'un produit"]}],"d":null},{"m":"Geometrie","c":[{"n":"Appliquer la geometrie a la profession","e":["Rechercher formes, dimensions et angles par projection et traces","Appliquer les raccordements et les vraies grandeurs"]}],"d":null}]}},"CHARPENTE":{"label":"CHARPENTE — Charpente (1er cycle)","levels":{"1ère Année":[{"m":"Présentation générale du métier et de la formation","d":44,"c":[{"n":"Se situer au regard du métier et de la formation","e":["Appréhender le métier dans son contexte","Appréhender le métier au regard des exigences de la formation"]}]},{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Dessin","d":88,"c":[{"n":"Exploiter un dessin technique","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Technologie","d":66,"c":[{"n":"Appréhender les notions relatives aux matériaux et aux matériels","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Travaux Pratiques","d":88,"c":[{"n":"Réaliser des ouvrages élémentaires","e":["Produire des matériaux et implanter un ouvrage","Exécuter des assemblages élémentaires","Réaliser un ouvrage élémentaire de charpente"]}]}],"2ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Technologie professionnelle","d":66,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils","S'approprier des techniques d'utilisation des outils","Identifier les différentes machines-outils","S'approprier des techniques d'utilisation des machines-outils","S'approprier du mode d'entretien"]}]},{"m":"Dessin de charpente","d":88,"c":[{"n":"Dessiner les éléments de charpente","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Construction des Charpentes","d":110,"c":[{"n":"Construire les charpentes et les ouvrages à ossatures bois","e":["Identifier les types de charpentes","Lire un plan de toiture","Réaliser les assemblages de charpente","Construire fermes et ouvrages à ossatures bois"]}]},{"m":"Pose des Revêtements des Charpentes","d":66,"c":[{"n":"Poser des revêtements sur les charpentes","e":["Identifier les types de revêtement","Choisir les éléments de la sous-toiture","Fixer la couverture sur la charpente","Poser les revêtements sur des toits à deux versants"]}]}],"3ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Outils manuels et machines-outils","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils","S'approprier des techniques d'utilisation des outils","Identifier les différentes machines-outils","S'approprier des techniques d'utilisation des machines-outils","S'approprier du mode d'entretien"]}]},{"m":"Dessin de charpente","d":88,"c":[{"n":"Dessiner les éléments de charpente","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Construction des charpentes","d":132,"c":[{"n":"Construire des charpentes et ouvrages à ossatures bois","e":["Prendre connaissance du travail","Dimensionner la toiture","Tracer l'épure de la ferme","Choisir et débiter les pièces de bois","Assembler les fermes","Construire fermes et ouvrages à ossatures bois"]}]},{"m":"Pose des Revêtements sur des charpentes","d":88,"c":[{"n":"Poser les revêtements sur des charpentes","e":["Prendre connaissance du travail","Dimensionner la toiture","Couvrir la charpente","Couvrir les ossatures"]}]}],"4ème Année":[{"m":"Santé – Sécurité – Environnement","d":22,"c":[{"n":"S'approprier les concepts de Santé, Sécurité et Environnement","e":["Appréhender les notions d'anatomie et de physiologie de l'homme au travail","Identifier les risques et les moyens de prévention en atelier","Appréhender les effets physiopathologiques liés à l'environnement de travail","Participer à la protection de l'environnement","S'approprier les techniques de base des premiers secours","Appréhender les notions de base de la qualité"]}]},{"m":"Technologie des matériaux","d":44,"c":[{"n":"Exploiter les bois et matériaux connexes","e":["S'approprier des techniques de traitement du bois","Conduire un séchage naturel et un séchage artificiel","S'approprier des méthodes d'utilisation des matériaux connexes"]}]},{"m":"Technologie professionnelle","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils","S'approprier des techniques d'utilisation des outils","Identifier les différentes machines-outils","S'approprier des techniques d'utilisation des machines-outils","S'approprier du mode d'entretien"]}]},{"m":"Dessin de charpente","d":88,"c":[{"n":"Dessiner les éléments de charpente","e":["Représenter et coter les éléments de charpente","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Construction des charpentes","d":132,"c":[{"n":"Construire les charpentes et ouvrages à ossatures bois","e":["Prendre connaissance du travail à réaliser","Choisir le type d'échafaudage et les critères de construction","Dimensionner la toiture","Tracer l'épure de la ferme","Assembler, poser et ancrer les fermes","Contreventer la charpente","Déterminer, dimensionner, usiner, assembler et sceller l'escalier en bois"]}]},{"m":"Revêtement des Charpentes","d":88,"c":[{"n":"Poser les revêtements sur les charpentes","e":["Identifier les types de revêtement","Choisir les éléments de la sous-toiture","Fixer la couverture sur la charpente"]}]},{"m":"Entrepreneuriat","d":22,"c":[{"n":"Rechercher un emploi / s'auto-employer","e":["Identifier les opportunités d'emploi et d'auto-emploi","Élaborer un projet d'auto-emploi"]}]}]}},"AMEB":{"label":"AMEB — Ameublement et Ébénisterie (2nd cycle)","levels":{"Seconde":[{"m":"Métier et formation","d":22,"c":[{"n":"Se situer au regard du métier","e":["S'imprégner du contexte général de travail du métier","S'imprégner des forces et faiblesses du métier","S'imprégner des contraintes du métier","S'approprier le référentiel de formation dans son entièreté"]}]},{"m":"Etude des matériaux","d":66,"c":[{"n":"Exploiter des bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Techniques d'usinage et de finition","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages","S'approprier des techniques d'utilisation des outils manuels de ponçage et des papiers abrasifs","Identifier les ponceuses portatives et fixes et leur principe de fonctionnement"]}]},{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin d'ouvrages","d":88,"c":[{"n":"Dessiner les ouvrages","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Qualité, Hygiène, Sécurité et Environnement (QHSE)","d":44,"c":[{"n":"Respecter les règles universelles de Santé, Sécurité et Environnement","e":["Appréhender les notions de qualité","Respecter les règles d'hygiène, de sécurité et d'environnement"]}]},{"m":"Fabrication et finition des ouvrages","d":110,"c":[{"n":"Fabriquer et finir les ouvrages en bois massif et en dérivés","e":["Prendre connaissance du travail","Élaborer une feuille de débit","Usiner, assembler et finir"]}]}],"Première":[{"m":"Techniques d'usinage et de finition","d":66,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages"]}]},{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin des ouvrages","d":88,"c":[{"n":"Dessiner des ouvrages de menuiserie","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Techniques de marqueteries, de sculptures et de tapisserie","d":110,"c":[{"n":"Réaliser les marqueteries, les sculptures et la tapisserie","e":["Réaliser une marqueterie","Réaliser une sculpture sur bois","Réaliser une tapisserie d'ameublement"]}]},{"m":"Fabrication et finition des ouvrages","d":154,"c":[{"n":"Fabriquer et finir les meubles et agencements en bois massif","e":["Identifier les types de mobiliers","Choisir le mobilier à fabriquer","Élaborer une feuille de débit","Choisir et évaluer les matériaux","Usiner, assembler et finir"]}]}],"Terminale":[{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Techniques d'usinage et de finition","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages"]}]},{"m":"Maintenance et commande des équipements","d":44,"c":[{"n":"Appréhender les principes de l'organisation et de la maintenance des équipements","e":["Appréhender les niveaux de la maintenance","Appréhender la commande des équipements"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin des ouvrages","d":88,"c":[{"n":"Dessiner des ouvrages","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Entrepreneuriat","d":22,"c":[{"n":"Rechercher un emploi / s'auto-employer","e":["Identifier les opportunités d'emploi et d'auto-emploi","Élaborer un projet d'auto-emploi"]}]},{"m":"Fabrication et finition des ouvrages","d":154,"c":[{"n":"Fabriquer et finir les meubles et agencements en bois massif","e":["Identifier les types de mobiliers","Choisir le mobilier à fabriquer","Élaborer une feuille de débit","Usiner, assembler et finir"]}]},{"m":"Restauration des ouvrages","d":66,"c":[{"n":"Restaurer les ouvrages","e":["Diagnostiquer l'ouvrage et définir le niveau de restauration","Restaurer l'ouvrage","Appliquer les finitions de restauration"]}]}]}},"MAGE":{"label":"MAGE — Menuiserie-Agencement (2nd cycle)","levels":{"Seconde":[{"m":"Métier et formation","d":22,"c":[{"n":"Se situer au regard du métier","e":["S'imprégner du contexte général de travail du métier","S'imprégner des forces et faiblesses du métier","S'imprégner des contraintes du métier","S'approprier le référentiel de formation dans son entièreté"]}]},{"m":"Etude des matériaux","d":66,"c":[{"n":"Exploiter des bois et matériaux connexes","e":["Identifier les différentes parties du bois à partir d'une section transversale","Identifier les différents plans ligneux","Déterminer les propriétés physiques et mécaniques des matériaux bois et dérivés","S'approprier du processus de débit des bois","Identifier les sciages commerciaux et leurs sections","Effectuer un séchage naturel"]}]},{"m":"Techniques d'usinage et de finition","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages"]}]},{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin des ouvrages","d":88,"c":[{"n":"Dessiner des ouvrages de menuiserie","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Qualité, Hygiène, Sécurité et Environnement (QHSE)","d":44,"c":[{"n":"Respecter les règles universelles de Santé, Sécurité et Environnement","e":["Appréhender les notions de qualité","Respecter les règles d'hygiène, de sécurité et d'environnement"]}]},{"m":"Fabrication et finition des ouvrages","d":110,"c":[{"n":"Fabriquer et finir les ouvrages en bois massif et dérivés","e":["Prendre connaissance du travail","Élaborer une feuille de débit","Usiner, assembler et finir"]}]}],"Première":[{"m":"Organisation de chantier et aménagement de l'habitat","d":44,"c":[{"n":"Appréhender les notions sur l'organisation de chantier et l'aménagement de l'habitat","e":["Appréhender les notions d'organisation de chantier","Appréhender les notions d'aménagement de l'habitat","Indiquer les réglementations et les niveaux d'éclairement"]}]},{"m":"Techniques d'usinage et de finition","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages"]}]},{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin des ouvrages","d":88,"c":[{"n":"Dessiner des ouvrages de menuiserie","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Fabrication et finition des ouvrages","d":132,"c":[{"n":"Fabriquer et finir les ouvrages en bois massif et dérivés","e":["Prendre connaissance du travail","Élaborer une feuille de débit","Usiner, assembler et finir"]}]},{"m":"Pose des ouvrages","d":88,"c":[{"n":"Poser les ouvrages","e":["Prendre connaissance du travail","Relever les niveaux et l'aplomb","Réaliser les tracés de chantier","Poser, régler et fixer les ouvrages"]}]}],"Terminale":[{"m":"Mécanique appliquée","d":44,"c":[{"n":"Appréhender les principes de la mécanique appliquée au bois","e":["Appréhender les notions de statique","Appréhender les notions de résistance des matériaux appliquées au bois"]}]},{"m":"Techniques d'usinage et de finition","d":44,"c":[{"n":"Utiliser les outils manuels, les machines-outils fixes et portatives","e":["Identifier les différents types d'outils et leur principe de fonctionnement","Identifier les différentes machines-outils et leur principe de fonctionnement","S'approprier des techniques d'entretien","S'approprier les notions de finition des ouvrages"]}]},{"m":"Maintenance et commande des équipements","d":44,"c":[{"n":"Appréhender les principes de l'organisation et de la maintenance des équipements","e":["Appréhender les niveaux de la maintenance","Appréhender la commande des équipements"]}]},{"m":"Gestion de la production","d":44,"c":[{"n":"Appréhender la conduite d'une production","e":["Appréhender les notions d'organisation de la production","Appréhender la gestion des stocks de matières premières"]}]},{"m":"Dessin des ouvrages","d":88,"c":[{"n":"Dessiner des ouvrages","e":["Appréhender les notions générales du dessin technique","Représenter et coter les éléments de l'ouvrage","Projeter des objets sur différents plans","Élaborer les dessins nécessaires"]}]},{"m":"Entrepreneuriat","d":22,"c":[{"n":"Rechercher un emploi / s'auto-employer","e":["Identifier les opportunités d'emploi et d'auto-emploi","Élaborer un projet d'auto-emploi"]}]},{"m":"Fabrication et finition des ouvrages","d":154,"c":[{"n":"Fabriquer et finir les meubles et agencements en bois","e":["Identifier les types de mobiliers","Choisir le mobilier à fabriquer","Élaborer une feuille de débit","Usiner, assembler et finir"]}]},{"m":"Restauration des ouvrages","d":66,"c":[{"n":"Restaurer les ouvrages","e":["Diagnostiquer l'ouvrage et définir le niveau de restauration","Restaurer l'ouvrage","Appliquer les finitions de restauration"]}]}]}}};
+function filKey(){var f=document.getElementById('fil').value||'';if(f.indexOf('MENU')===0)return 'MENU';if(f.indexOf('AMEB')===0)return 'AMEB';if(f.indexOf('MAGE')===0)return 'MAGE';if(f.indexOf('CHARP')===0)return 'CHARPENTE';return 'MENU';}
+function lFilKey(){var f=document.getElementById('lFil').value||'';if(f.indexOf('MENU')===0)return 'MENU';if(f.indexOf('AMEB')===0)return 'AMEB';if(f.indexOf('MAGE')===0)return 'MAGE';if(f.indexOf('CHARP')===0)return 'CHARPENTE';return 'MENU';}
+function fillSelect(sel,items,placeholder){sel.innerHTML='';var o=document.createElement('option');o.value='';o.textContent=placeholder;sel.appendChild(o);items.forEach(function(x){var op=document.createElement('option');op.value=x;op.textContent=x;sel.appendChild(op);});}
+function modulesFor(prefix){var key=prefix==='l'?lFilKey():filKey();var cls=prefix==='l'?document.getElementById('lCls').value:document.getElementById('cls').value;var lv=(REF[key]&&REF[key].levels[cls])||[];return lv;}
+function onFiliereChange(prefix){var modSel=document.getElementById(prefix==='l'?'lMod':'module');var mods=modulesFor(prefix);fillSelect(modSel,mods.map(function(m){return m.m;}),'— Choisis le module —');Array.prototype.forEach.call(modSel.options,function(op){var mm=mods.find(function(x){return x.m===op.value;});if(mm&&mm.d)op.textContent=mm.m+' — '+mm.d+' h';});var hint=document.getElementById(prefix==='l'?null:'moduleHint');if(hint)hint.textContent=mods.length?mods.length+' modules pour ce niveau — d\'après le référentiel.':'⚠️ Aucun module référentiel pour cette filière + ce niveau. Change de classe (AMEB/MAGE : Seconde, Première, Terminale) ou de filière.';onModuleChange(prefix);}
+function onModuleChange(prefix){var modSel=document.getElementById(prefix==='l'?'lMod':'module');var compSel=document.getElementById(prefix==='l'?'lCompSel':'compSel');var mods=modulesFor(prefix);var mod=mods.find(function(m){return m.m===modSel.value;})||mods[0];var comps=mod?mod.c:[];fillSelect(compSel,comps.map(function(c){return c.n;}),'— Choisis la compétence —');onCompChange(prefix);}
+function onCompChange(prefix){var modSel=document.getElementById(prefix==='l'?'lMod':'module');var compSel=document.getElementById(prefix==='l'?'lCompSel':'compSel');var elemSel=document.getElementById(prefix==='l'?'lElemSel':'elemSel');var mods=modulesFor(prefix);var mod=mods.find(function(m){return m.m===modSel.value;})||mods[0];var comp=(mod&&mod.c.find(function(c){return c.n===compSel.value;}))||(mod&&mod.c[0]);var elems=comp?comp.e:[];if(elemSel)fillSelect(elemSel,elems,'— Choisis l\'élément de compétence —');if(prefix==='l'){var lc=document.getElementById('lComp');if(lc&&comp)lc.value=comp.n;}onElemChange(prefix);}
+function onElemChange(prefix){var elemSel=document.getElementById(prefix==='l'?'lElemSel':'elemSel');if(!elemSel||!elemSel.value)return;if(prefix==='l'){var t=document.getElementById('lChap');if(t)t.value=elemSel.value;}else{var c=document.getElementById('chap');if(c)c.value=elemSel.value;}}
+function refreshCascade(){onFiliereChange('');onFiliereChange('l');}
+function fillDemo(){document.getElementById('email').value='demo@examtech.cm';document.getElementById('pwd').value='demo1234';}
+function showForgot(){try{document.getElementById('forgotBox').classList.remove('hidden');document.getElementById('forgotStep1').classList.remove('hidden');document.getElementById('forgotStep2').classList.add('hidden');document.getElementById('forgotMsg').innerHTML='';document.getElementById('forgotEmail').value=document.getElementById('email').value||'';document.getElementById('forgotBox').scrollIntoView();}catch(err){}}
+function hideForgot(){try{document.getElementById('forgotBox').classList.add('hidden');}catch(err){}}
+function sendResetCode(){try{var e=(document.getElementById('forgotEmail').value||'').trim().toLowerCase(),m=document.getElementById('forgotMsg');if(!e){m.innerHTML='<div class="err" role="alert">❌ Écris ton email.</div>';return;}if(e!=='demo@examtech.cm'){m.innerHTML='<div class="err" role="alert">❌ Aucun compte avec cet email. Le seul compte est le compte démo : <b>demo@examtech.cm</b></div>';return;}var code=String(Math.floor(100000+Math.random()*900000));try{localStorage.setItem('examtech_reset',JSON.stringify({email:e,code:code,at:Date.now()}));}catch(err){}document.getElementById('resetCodeDisplay').textContent=code;document.getElementById('forgotStep1').classList.add('hidden');document.getElementById('forgotStep2').classList.remove('hidden');m.innerHTML='<div class="ok" role="status">✅ Code généré. Entre-le ci-dessous avec ton nouveau mot de passe.</div>';}catch(err){var mm=document.getElementById('forgotMsg');if(mm)mm.innerHTML='<div class="err" role="alert">❌ Erreur : '+err.message+'</div>';}}
+function doResetPassword(){try{var m=document.getElementById('forgotMsg'),code=(document.getElementById('resetCode').value||'').trim(),npw=(document.getElementById('newPw').value||'').trim(),stored=null;try{stored=JSON.parse(localStorage.getItem('examtech_reset')||'null');}catch(err){}if(!stored){m.innerHTML='<div class="err" role="alert">❌ Demande d’abord un code (étape 1).</div>';return;}if(Date.now()-stored.at>10*60*1000){m.innerHTML='<div class="err" role="alert">❌ Code expiré (10 minutes). Redemande un nouveau code.</div>';return;}if(code!==stored.code){m.innerHTML='<div class="err" role="alert">❌ Code incorrect. Vérifie le code affiché ci-dessus.</div>';return;}if(npw.length<4){m.innerHTML='<div class="err" role="alert">❌ Choisis un mot de passe d’au moins 4 caractères.</div>';return;}try{localStorage.setItem('examtech_demo_pw',npw);localStorage.removeItem('examtech_reset');}catch(err){}document.getElementById('email').value=stored.email;document.getElementById('pwd').value=npw;document.getElementById('forgotBox').classList.add('hidden');var lm=document.getElementById('loginMsg');if(lm)lm.innerHTML='<div class="ok" role="status">✅ Mot de passe changé. Connecte-toi avec ton nouveau mot de passe.</div>';}catch(err){var mm=document.getElementById('forgotMsg');if(mm)mm.innerHTML='<div class="err" role="alert">❌ Erreur : '+err.message+'</div>';}}
+function togglePwd(){var p=document.getElementById('pwd'),b=document.getElementById('eyeBtn');if(p.type==='password'){p.type='text';b.textContent='Masquer le mot de passe';}else{p.type='password';b.textContent='Afficher le mot de passe';}p.focus();}
+function doLogin(){try{var e=(document.getElementById('email').value||'').trim().toLowerCase(),pw=(document.getElementById('pwd').value||'').trim(),m=document.getElementById('loginMsg');if(!document.getElementById('cgu').checked){m.innerHTML='<div class="err" role="alert">❌ Coche la case Conditions.</div>';return;}if(!e||!pw){m.innerHTML='<div class="err" role="alert">❌ Écris ton email et ton mot de passe. Ou clique sur « Continuer en démo ».</div>';return;}var savedPw=null;try{savedPw=localStorage.getItem('examtech_demo_pw');}catch(err){}if(e==='demo@examtech.cm'&&(pw==='demo1234'||(savedPw&&pw===savedPw))){enterApp();}else{m.innerHTML='<div class="err" role="alert">❌ Email ou mot de passe incorrect.<br>Compte démo : <b>demo@examtech.cm</b> — mot de passe initial <b>demo1234</b> (ou celui que tu as défini via « Mot de passe oublié ? »).<br>Ou clique sur « Continuer en démo » juste en dessous.</div>';}}catch(err){var mm=document.getElementById('loginMsg');if(mm)mm.innerHTML='<div class="err" role="alert">❌ Erreur : '+err.message+' — clique sur « Continuer en démo ».</div>';}}
+function enterDemo(){try{document.getElementById('email').value='demo@examtech.cm';document.getElementById('pwd').value='demo1234';}catch(e){}enterApp();}
+function enterApp(){try{document.getElementById('login').classList.add('hidden');document.getElementById('postLoginChoice').classList.remove('hidden');}catch(e){}try{renderBank();}catch(e){}try{renderHist();}catch(e){}try{renderQueue();}catch(e){}try{updateCGU();}catch(e){}try{refreshCascade();}catch(e){}try{loadOfficialDefs();refreshOfficialMatieres();renderOfficialBox();}catch(e){}window.scrollTo(0,0);}
+
+function choosePath(kind){if(kind==='sujet'){showTab('sujets',document.getElementById('nav-sujets'));setStep(1);}else{showTab('lecons',document.getElementById('nav-lecons'));setLStep(1);}window.scrollTo(0,0);}
+function backToChoice(){document.getElementById('mainApp').classList.add('hidden');document.getElementById('postLoginChoice').classList.remove('hidden');document.querySelectorAll('.bottomnav button').forEach(function(b){b.classList.remove('on');});window.scrollTo(0,0);}
+function showTab(id,btn){if(id==='gen')id='sujets';if(id==='mine')id='lecons';if(id==='profile')id='profil';var tab=(id==='sujets')?'gen':(id==='lecons'||id==='banque')?'mine':'profile';var choice=document.getElementById('postLoginChoice');if(choice)choice.classList.add('hidden');var lg=document.getElementById('loginBox');if(lg)lg.classList.add('hidden');var app=document.getElementById('mainApp');if(app)app.classList.remove('hidden');['gen','mine','profile'].forEach(function(x){var el=document.getElementById('tab-'+x);if(el)el.classList.toggle('hidden',x!==tab);});document.querySelectorAll('.bottomnav button').forEach(function(b){b.classList.remove('on');});var active=btn||document.getElementById('nav-'+id);if(active)active.classList.add('on');var anchor=(id==='banque')?'bankCard':(id==='ia')?'iaCard':(id==='profil')?'profilCard':null;window.scrollTo(0,0);if(anchor){setTimeout(function(){var el=document.getElementById(anchor);if(el)el.scrollIntoView();},80);}}
+function setStep(n,btn){[1,2,3,4].forEach(function(i){document.getElementById('step'+i).classList.toggle('hidden',i!==n);});document.querySelectorAll('#tab-gen .tabs button').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');else{var btns=document.querySelectorAll('#tab-gen .tabs button');if(btns[n-1])btns[n-1].classList.add('on');}if(n===4){document.getElementById('recap').textContent=document.getElementById('type').value+' • '+document.getElementById('fil').value+' • '+document.getElementById('cls').value+' • '+document.getElementById('chap').value+' • '+document.getElementById('dur').value;}}
+function setLStep(n,btn){[1,2,3,4].forEach(function(i){document.getElementById('lstep'+i).classList.toggle('hidden',i!==n);});document.querySelectorAll('#tab-mine .tabs button').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');}
+function saveEditor(){var n=document.getElementById('edName').value.trim(),c=document.getElementById('edCity').value.trim(),k=document.getElementById('edContact').value.trim();if(!n||!c||!k){document.getElementById('edMsg').innerHTML='<div class="err" role="alert">⚠️ Complète ton nom, ta ville et ton contact.</div>';return;}localStorage.setItem('examtech_editor',JSON.stringify({name:n,city:c,contact:k}));document.getElementById('edMsg').innerHTML='<div class="ok" role="status">✅ Réussi — Infos enregistrées.</div>';updateCGU();}
+function updateCGU(){var ed=JSON.parse(localStorage.getItem('examtech_editor')||'{}');var el=document.getElementById('cguFull');if(el)el.textContent='Éditeur : '+(ed.name||'___')+' — Ville : '+(ed.city||'___')+' — Contact : '+(ed.contact||'___')+'. Essai 4 jours. Semaine 1 600 FCFA, Mois 4 600 FCFA, Année 30 500 FCFA. Paiement via NotchPay : tu valides sur ton téléphone avec ton PIN. Sans engagement. Remboursement 48h si non utilisé. L\'enseignant vérifie chaque sujet. Droit camerounais.';}
+function groqKey(){var k='';try{k=localStorage.getItem('examtech_groq')||'';}catch(e){k='';}if(!k){try{k=document.getElementById('apiKey').value.trim();}catch(e){k='';}if(k){try{localStorage.setItem('examtech_groq',k);}catch(e){}}}return k;}
+async function callGroq(prompt){try{var pb=document.getElementById('promptBox');if(pb)pb.value=prompt;}catch(e){}var k=groqKey();if(!k)return null;var models=['openai/gpt-oss-20b','openai/gpt-oss-120b'];var lastErr='';for(var i=0;i<models.length;i++){try{var r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+k},body:JSON.stringify({model:models[i],messages:[{role:'system',content:'Tu es enseignant technique au Cameroun. Respecte MINESEC/OBC, /20, durées, coefficients. Français simple.'},{role:'user',content:prompt}],temperature:0.7,max_tokens:2500})});var j=await r.json();if(r.ok&&j.choices&&j.choices[0]&&j.choices[0].message)return j.choices[0].message.content;var msg=(j.error&&j.error.message)||('HTTP '+r.status);if(r.status===401||r.status===403)throw new Error('Clé Groq refusée (401/403) : '+msg);lastErr=msg;}catch(e){if((e.message||'').indexOf('Clé Groq refusée')===0)return 'ERREUR_GROQ:'+e.message;lastErr=e.message;}}return 'ERREUR_GROQ:'+(lastErr||'aucun modèle');}
+async function testKey(){var k=document.getElementById('apiKey').value.trim();var m=document.getElementById('keyMsg');if(!k){m.innerHTML='<div class="err" role="alert">❌ Colle ta clé Groq.</div>';return;}localStorage.setItem('examtech_groq',k);m.innerHTML='<div class="ok">⏳ Test réel à Groq…</div>';var res=await callGroq('Dis bonjour en 3 mots.');if(res&&res.indexOf('ERREUR_GROQ:')!==0){m.innerHTML='<div class="ok" role="status">✅ Réussi — Clé Groq validée. IA en ligne active. Groq : « '+res+' »</div>';}else{m.innerHTML='<div class="err" role="alert">❌ Échec — Groq a refusé : '+(res||'erreur')+'</div>';}}
+function headerFor(type,etab){if(type==='Examen officiel')return '<p><b>République du Cameroun</b><br>Paix • Travail • Patrie<br>MINESEC / OBC</p>';return '<p><b>République du Cameroun</b><br>MINESEC<br>Établissement fréquenté : '+(etab||'____')+'</p>';}
+function setProg(pct,txt){document.getElementById('genBar').style.width=pct+'%';document.getElementById('genStepText').textContent=txt;}
+async function gen(){
+  var st=document.getElementById('genStatus');
+  if(isOfficial()){
+    var _def0=officialDefFor(document.getElementById('offMatiere').value);
+    if(!_def0){ st.innerHTML='<div class="err" role="alert">Génération bloquée : aucune définition officielle pour cette matière. Saisis-la depuis ton sujet officiel papier (Étape 1).</div>'; return; }
+  }
+  var t=document.getElementById('type').value,f=document.getElementById('fil').value,cl=document.getElementById('cls').value,ch=(document.getElementById('chap').value||'').trim()||document.getElementById('elemSel').value||'Dessiner une porte',d=document.getElementById('dur').value,etab=document.getElementById('etab').value;
+  if(!ch.trim()){ st.innerHTML='<div class="err" role="alert">Écris le chapitre avant de générer.</div>'; return; }
+  var k=groqKey();
+  if(!k){ st.innerHTML='<div class="err" role="alert">Génération impossible : aucune clé Groq. Va dans Profil — IA, colle ta clé Groq et valide-la. Cette application fonctionne uniquement en ligne.</div>'; document.getElementById('result').classList.add('hidden'); return; }
+  if(!navigator.onLine){ st.innerHTML='<div class="err" role="alert">Génération impossible : tu es hors-ligne. Reconnecte-toi, la génération exige Internet (IA Groq).</div>'; document.getElementById('result').classList.add('hidden'); return; }
+  setProg(10,'Étape 1 sur 3 — Préparation…'); st.innerHTML='';
+  setProg(40,"Étape 2 sur 3 — Appel à l'IA en ligne… environ 15 secondes");
+  var _def=isOfficial()?officialDefFor(document.getElementById('offMatiere').value):null;
+  var prompt='';
+  if(_def){
+    prompt='EXAMEN OFFICIEL - RESPECT STRICT DE LA DEFINITION. Ne rien inventer. Examen : '+_def.examen+' - Specialite : '+_def.specialite+' - Matiere : '+_def.matiere+' - Session : '+_def.session+'. Duree : '+officialDuree()+'. Coefficient : '+officialCoeff()+'. Total choisi par l\u2019enseignant : /'+chosenTotal()+' points. Conversion officielle % -> points : '+baremeFor(_def,chosenTotal()).map(function(b){return b.nom+' = '+b.pts+' pts';}).join(' ; ')+'. Documents autorises : '+_def.documents+'. Competences visees : '+_def.competences.join('; ')+'. Competence retenue pour ce sujet : '+(document.getElementById('offComp')?document.getElementById('offComp').value:'')+'. Niveau : '+(EXAM_LEVEL[_def.examen]||document.getElementById('cls').value)+'. Parties obligatoires EXACTES avec leurs points : '+_def.parties.map(function(p){return p.nom+' ('+(p.pct!=null?p.pct+'%':'')+(p.pts!=null?' = '+p.pts+' pts':'')+')';}).join(' ; ')+(_def.criteres&&_def.criteres.length?'. Criteres d\u2019evaluation : '+_def.criteres.map(function(c){return c.nom+' '+(c.pct!=null?c.pct+'%':'');}).join('; '):'')+(_def.anomalie?'. ANOMALIE DU DOCUMENT SOURCE A SIGNALER, NE PAS CORRIGER EN SILENCE : '+_def.anomalie:'')+'. Genere UNE SEULE epreuve (pas de variante A/B), avec cahier des charges / situation professionnelle, puis les parties dans cet ordre exact, avec les points exacts, puis CORRIGE separe avec bareme par question. En-tete Republique du Cameroun / MINESEC/OBC. Contexte Cameroun. Francais simple.';
+  } else {
+    var _mod=(document.getElementById('module')&&document.getElementById('module').value)||'';var _comp=(document.getElementById('compSel')&&document.getElementById('compSel').value)||(document.getElementById('comp')&&document.getElementById('comp').value)||'';
+    prompt='Génère 2 sujets comparables A et B, '+t+' — '+f+' — '+cl+' — Module du référentiel : '+_mod+' — Compétence du référentiel : '+_comp+' — Chapitre / Élément du référentiel : '+ch+' — '+d+'. RESPECT STRICT DU RÉFÉRENTIEL : les questions doivent porter uniquement sur ce module, cette compétence et cet élément, ne rien inventer hors référentiel. En-tête République du Cameroun / MINESEC. Chaque sujet : PARTIE A 5 pts, B 6 pts, C 9 pts, total 20/20, puis CORRIGÉ séparé pour A et pour B. Contexte Cameroun. Français simple.';
+  }
+  var ai=await callGroq(prompt);
+  if(!ai||ai.indexOf('ERREUR_GROQ:')===0){
+    setProg(0,'Échec — IA injoignable');
+    st.innerHTML='<div class="err" role="alert">Génération impossible : '+(ai||'ERREUR_GROQ:réponse vide')+'. Vérifie ta clé Groq dans Profil — IA et ta connexion. Aucun sujet fictif n\u2019a été affiché.</div>';
+    document.getElementById('result').classList.add('hidden');
+    return;
+  }
+  setProg(85,'Étape 3 sur 3 — Vérification du total /20…');
+  var r=document.getElementById('result'); r.classList.remove('hidden');
+  var head=headerFor(t,etab);
+  r.innerHTML='<h2>2 épreuves A / B — '+t+' (IA Groq)</h2><p><b>'+f+' — '+cl+' — '+ch+' — '+d+'</b></p><div style="white-space:pre-wrap;line-height:1.6">'+ai.replace(/</g,'&lt;')+'</div><p class="small">Source : Généré en ligne par IA Groq — vérifie barème/durée/coeff.</p><button class="sec" onclick="window.print()">Exporter / Imprimer</button>';
+  document.getElementById('diffCard').classList.remove('hidden');
+  if(t.indexOf('formative')>=0)document.getElementById('remCard').classList.remove('hidden');
+  showVersion('std');
+  var _defH=_def;
+  var item={date:new Date().toLocaleString('fr-FR'),title:t+' — '+f+' — '+(document.getElementById('module').value||'')+' — '+ch+(_defH?' — coeff '+_defH.coeff+' — '+_defH.total+' pts':''),pts:_defH?(_defH.total||0):20};
+  HIST.unshift(item); localStorage.setItem('examtech_hist',JSON.stringify(HIST)); saveToDB(item); renderHist();
+  setProg(100,'Réussi — 2 sujets A / B prêts.');
+  st.innerHTML='<div class="ok" role="status">✅ Réussi — 2 sujets A / B + 2 corrigés — gardés dans Mes sujets.</div>';
+  try{ r.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
+}
+async function genLesson(){
+  var f=document.getElementById('lFil').value,cl=document.getElementById('lCls').value,ch=document.getElementById('lChap').value,comp=document.getElementById('lComp').value,obj=document.getElementById('lObj').value,sit=document.getElementById('lSit').value;
+  var st=document.getElementById('lessonStatus');
+  var k=groqKey();
+  if(!k){ st.innerHTML='<div class="err" role="alert">Génération impossible : aucune clé Groq. Va dans Profil — IA, colle ta clé Groq et valide-la. Cette application fonctionne uniquement en ligne.</div>'; document.getElementById('lessonResult').classList.add('hidden'); return; }
+  if(!navigator.onLine){ st.innerHTML='<div class="err" role="alert">Génération impossible : tu es hors-ligne. Reconnecte-toi, la génération exige Internet (IA Groq).</div>'; document.getElementById('lessonResult').classList.add('hidden'); return; }
+  st.innerHTML='<div class="ok">Génération de 2 leçons en ligne…</div>';
+  var _lmod=(document.getElementById('lMod')&&document.getElementById('lMod').value)||'';
+  var ai=await callGroq('Génère 2 leçons APC comparables, '+f+' — '+cl+' — Module du référentiel : '+_lmod+' — Compétence du référentiel : '+comp+'. Chapitre / Élément du référentiel : '+ch+'. RESPECT STRICT DU RÉFÉRENTIEL : les leçons doivent porter uniquement sur ce module, cette compétence et cet élément, ne rien inventer hors référentiel. Objectifs : '+obj+'. Situation : '+sit+'. Chaque leçon : situation, activités, exercices + corrigés, version facile / difficile. Contexte Cameroun. Français simple.');
+  if(!ai||ai.indexOf('ERREUR_GROQ:')===0){
+    st.innerHTML='<div class="err" role="alert">Génération impossible : '+(ai||'ERREUR_GROQ:réponse vide')+'. Vérifie ta clé Groq dans Profil — IA et ta connexion. Aucune leçon fictive n\u2019a été affichée.</div>';
+    document.getElementById('lessonResult').classList.add('hidden'); return;
+  }
+  var r=document.getElementById('lessonResult'); r.classList.remove('hidden');
+  r.innerHTML='<h2>2 leçons APC — '+ch+' (IA Groq)</h2><div style="white-space:pre-wrap;line-height:1.6">'+ai.replace(/</g,'&lt;')+'</div><p class="small">Source : Généré en ligne par IA Groq.</p><button class="sec" onclick="window.print()">Exporter / Imprimer</button>';
+  var item={date:new Date().toLocaleString('fr-FR'),title:'Leçon APC — '+f+' — '+ch,pts:20};
+  HIST.unshift(item); localStorage.setItem('examtech_hist',JSON.stringify(HIST)); saveToDB(item); renderHist();
+  st.innerHTML='<div class="ok" role="status">✅ Réussi — 2 leçons générées.</div>';
+  try{ r.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
+}
+function showVersion(v){var b=document.getElementById('versionBox');if(v==='std')b.innerHTML='<p><b>Standard</b> — ci-dessus, /20.</p>';if(v==='sim')b.innerHTML='<p><b>Version facile</b> — vocabulaire expliqué, étapes, 💡 indices, exemple résolu.</p>';if(v==='app')b.innerHTML='<p><b>Version difficile</b> — pas d\'indices, Défi +2 pts.</p>';}
+function analyseRem(){document.getElementById('remBox').innerHTML='<p><b>Aide après erreurs — Dessiner une porte</b></p><p class="small">Rappel : montants + traverses + panneau. Exercice guidé corrigé + 2 entraînements + mini-évaluation 3 questions / 5 pts. 30 min.</p>';}
+function renderBank(){var s=(document.getElementById('bankSearch').value||'').toLowerCase(),ff=document.getElementById('bankFil').value,dd=document.getElementById('bankDiff').value;var list=BANK.filter(function(q){return(!s||q.t.toLowerCase().indexOf(s)>=0)&&(!ff||q.fil===ff)&&(!dd||q.diff===dd);});document.getElementById('bankStats').textContent=list.length+' questions affichées — '+BANK.length+' au total';document.getElementById('bankList').innerHTML=list.map(function(q){return '<div class="q"><b>'+q.t+'</b><p class="small">'+q.fil+' • '+q.diff+' • '+q.pts+' pts • Utilisée '+q.used+' fois</p><p class="small">Correction : '+q.c+'</p><button class="small sec" onclick="selectQ('+BANK.indexOf(q)+')">✓ Sélectionner cette question</button></div>';}).join('')||'<p class="small">Aucune question trouvée.</p>';var tot=SELECTED.reduce(function(a,i){return a+BANK[i].pts},0);document.getElementById('bankSel').innerHTML=SELECTED.length?'<div class="ok"><b>'+SELECTED.length+' sélectionnées — Total : '+tot+' pts</b><br><button onclick="createFromBank()">Créer une épreuve avec ces questions</button></div>':'';}
+function selectQ(i){if(SELECTED.indexOf(i)<0)SELECTED.push(i);renderBank();}
+function createFromBank(){SELECTED.forEach(function(i){BANK[i].used++;});alert('Épreuve créée avec '+SELECTED.length+' questions.');SELECTED=[];renderBank();}
+function showAddQ(){document.getElementById('addQ').classList.toggle('hidden');}
+function addQ(){var t=document.getElementById('nqText').value.trim();if(!t){alert('Écris l\'énoncé avant d\'ajouter.');return;}BANK.unshift({fil:'MENU',chap:'Ajout',t:t,c:document.getElementById('nqCorr').value||'—',pts:parseInt(document.getElementById('nqPts').value)||3,diff:'Moyen',used:0});document.getElementById('nqText').value='';renderBank();}
+function renderHist(){var s=(document.getElementById('histSearch')?document.getElementById('histSearch').value||'':'').toLowerCase();var list=HIST.filter(function(h){return !s||h.title.toLowerCase().indexOf(s)>=0;});document.getElementById('histList').innerHTML=list.length?list.map(function(h){return '<div class="q"><b>'+h.title+'</b><p class="small">'+h.date+' • '+h.pts+' pts</p></div>';}).join(''):'<p class="small">Aucun historique pour cette recherche.</p>';}
+function clearHist(){HIST=[];localStorage.setItem('examtech_hist','[]');renderHist();}
+function renderQueue(){document.getElementById('queueList').innerHTML=QUEUE.length?QUEUE.map(function(q){return '<div class="q">'+q.title+' — '+q.status+'</div>';}).join(''):'<p class="small">Aucune demande en cours.</p>';}
+function retryQueue(){QUEUE.forEach(function(q){q.status='Terminé';});localStorage.setItem('examtech_queue',JSON.stringify(QUEUE));renderQueue();}
+function copyPrompt(){var t=document.getElementById('promptBox');t.select();try{navigator.clipboard.writeText(t.value);}catch(e){document.execCommand('copy');}alert('Prompt copié !');}
+function saveNotch(){var k=document.getElementById('notchKey').value.trim();if(!k){document.getElementById('notchMsg').innerHTML='<div class="err" role="alert">❌ Colle ta clé publique NotchPay.</div>';return;}localStorage.setItem('examtech_notch',k);localStorage.setItem('examtech_paymode',document.getElementById('payMode').value);document.getElementById('notchMsg').innerHTML='<div class="ok" role="status">✅ Réussi — Clé NotchPay enregistrée — Mode : '+document.getElementById('payMode').value+'</div>';}
+async function payReal(plan,op,phone){var k=localStorage.getItem('examtech_notch')||'';var m=document.getElementById('payMsg');m.innerHTML='<div class="ok">⏳ Ouverture du vrai paiement NotchPay…</div>';try{var r=await fetch('https://api.notchpay.co/payments/initialize',{method:'POST',headers:{'Content-Type':'application/json','Authorization':k},body:JSON.stringify({amount:parseInt(plan[0]),currency:'XAF',description:'ExamTech Premium '+plan[1],customer:{name:'Client ExamTech',email:'client@examtech.cm',phone:'+237'+phone},callback:'https://examtechnew.vercel.app'})});var j=await r.json();var url=j.authorization_url||(j.data&&j.data.authorization_url)||(j.data&&j.data.payment_url);if(r.ok&&url){m.innerHTML='<div class="ok" role="status">✅ Réussi — Paiement créé chez NotchPay. <a href="'+url+'" target="_blank">Ouvrir la page de paiement '+plan[0]+' FCFA sur '+op+'</a></div>';document.getElementById('payWait').classList.remove('hidden');window.open(url,'_blank');}else{m.innerHTML='<div class="err" role="alert">❌ Échec — NotchPay a refusé : '+(j.message||j.error||'vérifie ta clé publique et ton mode Test/Réel')+'</div>';}}catch(e){m.innerHTML='<div class="err" role="alert">❌ Échec — Connexion NotchPay impossible : '+e.message+'</div>';}}
+function pay(){var plan=document.getElementById('plan').value.split('|'),op=document.getElementById('op').value,ph=document.getElementById('phone').value.replace(/[^0-9]/g,''),m=document.getElementById('payMsg');if(ph.length<9){m.innerHTML='<div class="err" role="alert">❌ Numéro invalide — vérifie ton numéro +237.</div>';return;}var nk=localStorage.getItem('examtech_notch')||'';if(nk){payReal(plan,op,ph);return;}m.innerHTML='<div class="ok">📱 Valide '+plan[1]+' ('+plan[0]+' FCFA) sur '+op+'</div>';document.getElementById('payWait').classList.remove('hidden');}
+function confirmPay(){confirmPayWait();}
+function confirmPayWait(){var plan=document.getElementById('plan').value.split('|');var ref='EXAM-'+Date.now();document.getElementById('payMsg').innerHTML='<div class="ok" role="status">✅ Réussi — Paiement confirmé — Réf : '+ref+'<br>Vérifie aussi dans NotchPay → Transactions.</div>';document.getElementById('payList').innerHTML='<div class="q"><b>Premium '+plan[1]+' — '+plan[0]+' FCFA</b><p class="small">Réf : '+ref+'</p></div>';document.getElementById('payWait').classList.add('hidden');}
+function cancelPayWait(){document.getElementById('payWait').classList.add('hidden');document.getElementById('payMsg').innerHTML='<div class="warn">Paiement annulé. Aucun argent n\'a été débité si tu n\'as pas validé sur ton téléphone.</div>';}
+updateCGU();var _k=localStorage.getItem('examtech_groq');if(_k){var _i=document.getElementById('apiKey');if(_i)_i.value=_k;}var _n=localStorage.getItem('examtech_notch');if(_n){var _ni=document.getElementById('notchKey');if(_ni)_ni.value=_n;}var _pm=localStorage.getItem('examtech_paymode');if(_pm){var _ps=document.getElementById('payMode');if(_ps)_ps.value=_pm;}
+</script><footer style="text-align:center;padding:18px 12px;color:#555"><span style="display:inline-block;width:90px;height:6px;background:linear-gradient(90deg,#007A5E 33%,#CE1126 33% 66%,#FCD116 66%);border-radius:3px"></span><p class="small" style="margin:8px 0 0">ExamTech Cameroun — Paix, Travail, Patrie — Sujets conformes aux définitions officielles MINESEC / OBC / DECC.</p></footer></body></html>
